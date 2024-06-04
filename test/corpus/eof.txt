@@ -1,0 +1,19 @@
+======
+Family + EOF
+======
+
+Family
+---------------
+
+(root (family (name)))
+
+======
+Relation + EOF
+======
+
+Family
+
+Name = Name
+---------------
+
+(root (family (name) (relation (name) (name))))

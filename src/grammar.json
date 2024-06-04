@@ -1,0 +1,78 @@
+{
+  "name": "familymarkup",
+  "rules": {
+    "root": {
+      "type": "REPEAT",
+      "content": {
+        "type": "SYMBOL",
+        "name": "family"
+      }
+    },
+    "family": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "name"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_nl_eof"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "relation"
+          }
+        }
+      ]
+    },
+    "relation": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "name"
+        },
+        {
+          "type": "STRING",
+          "value": "="
+        },
+        {
+          "type": "SYMBOL",
+          "name": "name"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_nl_eof"
+        }
+      ]
+    },
+    "name": {
+      "type": "PATTERN",
+      "value": "\\p{Lu}[\\p{L}\\-\\d]*",
+      "flags": "u"
+    }
+  },
+  "extras": [
+    {
+      "type": "PATTERN",
+      "value": "\\s"
+    }
+  ],
+  "conflicts": [
+    [
+      "family"
+    ]
+  ],
+  "precedences": [],
+  "externals": [
+    {
+      "type": "SYMBOL",
+      "name": "_nl_eof"
+    }
+  ],
+  "inline": [],
+  "supertypes": []
+}

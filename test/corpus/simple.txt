@@ -1,0 +1,31 @@
+========
+Simple list
+========
+
+Family
+
+Name1 = Name2
+
+Name1 = Name2
+
+Family2
+
+Name1 = Name2
+
+----
+
+(root
+  (family
+    (name)
+    (relation
+      (name)
+      (name))
+    (relation
+      (name)
+      (name)))
+  (family
+    (name)
+    (relation
+      (name)
+      (name))))
+
