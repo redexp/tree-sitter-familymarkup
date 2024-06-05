@@ -16,16 +16,22 @@ Name1 = Name2
 
 (root
   (family
-    (name)
-    (relation
-      (name)
-      (name))
-    (relation
-      (name)
-      (name)))
+    (name_desc (name))
+    (relations
+      (relation
+        (name)
+        (name_desc (name)))
+      (relation
+        (name)
+        (name_desc (name)))
+    )
+  )
   (family
-    (name)
-    (relation
-      (name)
-      (name))))
+    (name_desc (name))
+    (relations
+      (relation
+        (name)
+        (name_desc (name)))
+    )
+  ))
 
