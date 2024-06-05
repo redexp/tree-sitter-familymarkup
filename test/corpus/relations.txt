@@ -10,14 +10,15 @@ Name0 = Name1 (Name2)
 
 (root
   (family
-    (name_desc (name))
+    (name_desc
+      (name))
     (relations
       (relation
-        (name)
-        (name_desc
-          (name)
-          (name_aliases (name)))
-      )
-    )
-  )
-)
+        (sources
+          (name))
+        (targets
+          (name_desc
+            (name)
+            (name_aliases
+              (name))))))))
+

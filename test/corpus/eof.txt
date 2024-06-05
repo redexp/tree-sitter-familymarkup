@@ -32,13 +32,16 @@ Name = Name
 
 (root
   (family
-    (name_desc (name))
+    (name_desc
+      (name))
     (relations
       (relation
-        (name)
-        (name_desc (name)))
-    )
-  ))
+        (sources
+          (name))
+        (targets
+          (name_desc
+            (name)))))))
+
 
 ======
 Relation + Family + EOF
@@ -53,13 +56,16 @@ Family
 
 (root
   (family
-    (name_desc (name))
+    (name_desc
+      (name))
     (relations
       (relation
-        (name)
-        (name_desc (name)))
-    )
-  )
+        (sources
+          (name))
+        (targets
+          (name_desc
+            (name))))))
+  (family
+    (name_desc
+      (name))))
 
-  (family (name_desc (name)))
-)

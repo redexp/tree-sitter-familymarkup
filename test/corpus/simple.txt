@@ -19,19 +19,27 @@ Name1 = Name2
     (name_desc (name))
     (relations
       (relation
-        (name)
-        (name_desc (name)))
+        (sources
+          (name))
+        (targets
+          (name_desc
+            (name))))
+
       (relation
-        (name)
-        (name_desc (name)))
-    )
-  )
+        (sources
+          (name))
+        (targets
+          (name_desc
+            (name))))))
+
   (family
     (name_desc (name))
     (relations
       (relation
-        (name)
-        (name_desc (name)))
-    )
-  ))
+        (sources
+          (name))
+        (targets
+          (name_desc
+            (name)))))))
+
 

@@ -8,6 +8,7 @@ module.exports = grammar({
   conflicts: $ => [
     [$.family],
     [$.relations],
+    [$.targets],
   ],
 
 	rules: {
@@ -26,13 +27,13 @@ module.exports = grammar({
     relations: $ => repeatWith($.relation, $._multi_newline),
 
     relation: $ => seq(
-      $.name,
+      $.sources,
       '=',
-      $.name_desc
+      $.targets
     ),
 
-    // source: $ => prec.left(repeatWith($.name, choice('+', ','))),
-    // target: $ => prec.left(repeatWith($.name_desc, ',')),
+    sources: $ => repeatWith($.name, choice('+', ',')),
+    targets: $ => repeatWith($.name_desc, ','),
 
     name_desc: $ => seq(
       $.name,
