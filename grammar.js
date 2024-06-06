@@ -34,8 +34,8 @@ module.exports = grammar({
       optional($.targets)
     ),
 
-    sources: $ => repeatWith($.name, field('join', choice('+', ','))),
-    targets: $ => repeatWith($.name_desc, field('join', ',')),
+    sources: $ => repeatWith($.name, field('join', choice('+', ',', $._words))),
+    targets: $ => repeatWith($.name_desc, field('join', choice(',', $._words))),
 
     name_desc: $ => seq(
       $.name,
@@ -50,6 +50,7 @@ module.exports = grammar({
 
     name: _ => /\p{Lu}[\p{L}\-\d]*/u,
     words: _ => /\p{Ll}[\p{Ll}\s]*/u,
+    _words: $ => alias($.words, '_words'),
   },
 });
 

@@ -210,3 +210,52 @@ Family
   )
 )
 
+
+
+========
+relations with words as join
+========
+
+Family
+
+Name0 and Name - word
+
+---------
+
+(root
+  (family
+    (name_desc (name))
+    (relations
+      (relation
+        (sources (name) (name))
+        (words)
+      )
+    )
+  )
+)
+
+========
+relations with words as join + Name
+========
+
+Family
+
+Name0 and Name - Name and Name
+
+---------
+
+(root
+  (family
+    (name_desc (name))
+    (relations
+      (relation
+        (sources (name) (name))
+        (targets
+          (name_desc (name))
+          (name_desc (name))
+        )
+      )
+    )
+  )
+)
+

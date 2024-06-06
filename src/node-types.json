@@ -141,6 +141,10 @@
           {
             "type": ",",
             "named": false
+          },
+          {
+            "type": "_words",
+            "named": false
           }
         ]
       }
@@ -166,6 +170,10 @@
         "types": [
           {
             "type": ",",
+            "named": false
+          },
+          {
+            "type": "_words",
             "named": false
           }
         ]
@@ -204,6 +212,10 @@
   },
   {
     "type": "=",
+    "named": false
+  },
+  {
+    "type": "_words",
     "named": false
   },
   {

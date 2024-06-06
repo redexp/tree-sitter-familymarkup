@@ -181,6 +181,10 @@
                       {
                         "type": "STRING",
                         "value": ","
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "_words"
                       }
                     ]
                   }
@@ -218,8 +222,17 @@
                   "type": "FIELD",
                   "name": "join",
                   "content": {
-                    "type": "STRING",
-                    "value": ","
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": ","
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "_words"
+                      }
+                    ]
                   }
                 },
                 {
@@ -322,6 +335,15 @@
       "type": "PATTERN",
       "value": "\\p{Ll}[\\p{Ll}\\s]*",
       "flags": "u"
+    },
+    "_words": {
+      "type": "ALIAS",
+      "content": {
+        "type": "SYMBOL",
+        "name": "words"
+      },
+      "named": false,
+      "value": "_words"
     }
   },
   "extras": [
