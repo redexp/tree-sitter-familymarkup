@@ -8,8 +8,6 @@ module.exports = grammar({
   conflicts: $ => [
     [$.family],
     [$.relations],
-    [$.targets],
-    [$.relation],
   ],
 
 	rules: {
@@ -29,7 +27,7 @@ module.exports = grammar({
 
     relation: $ => seq(
       $.sources,
-      field('arrow', choice('=', '-')),
+      field('arrow', $._arrows),
       field('label', optional($.words)),
       optional($.targets)
     ),
@@ -51,14 +49,14 @@ module.exports = grammar({
     name: _ => /\p{Lu}[\p{L}\-\d]*/u,
     words: _ => /\p{Ll}[\p{Ll}\s]*/u,
     _words: $ => alias($.words, '_words'),
+
+    _arrows: _ => choice('=', '<->', '->', '<-', '-'),
   },
 });
 
 function repeatWith(rule, sep) {
   return seq(
     rule,
-    optional(
-      seq(sep, repeat(rule))
-    )
+    repeat(seq(sep, rule))
   );
 }
