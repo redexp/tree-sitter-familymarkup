@@ -49,7 +49,7 @@ module.exports = grammar({
     ),
 
     name: _ => /\p{Lu}[\p{L}\-\d]*/u,
-    words: _ => /\p{Ll}[\p{Ll}\d\s]*/u,
+    words: _ => /\p{Ll}[\p{Ll}\s]*/u,
   },
 });
 

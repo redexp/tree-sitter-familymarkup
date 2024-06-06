@@ -30,7 +30,7 @@ dash + label
 
 Fam
 
-Name - word 2 and word 3
+Name - word and word
 
 ------
 
@@ -51,7 +51,7 @@ dash + label + Name
 
 Fam
 
-Name - word 2 and word 3 Name
+Name - word and word Name
 
 ------
 

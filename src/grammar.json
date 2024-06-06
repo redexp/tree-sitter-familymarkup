@@ -312,7 +312,7 @@
     },
     "words": {
       "type": "PATTERN",
-      "value": "\\p{Ll}[\\p{Ll}\\d\\s]*",
+      "value": "\\p{Ll}[\\p{Ll}\\s]*",
       "flags": "u"
     }
   },
