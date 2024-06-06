@@ -28,7 +28,8 @@ module.exports = grammar({
 
     relation: $ => seq(
       $.sources,
-      '=',
+      field('arrow', choice('=', '-')),
+      field('label', optional($.words)),
       $.targets
     ),
 
@@ -47,6 +48,7 @@ module.exports = grammar({
     ),
 
     name: _ => /\p{Lu}[\p{L}\-\d]*/u,
+    words: _ => /\p{Ll}[\p{Ll}\d\s]*/u,
   },
 });
 

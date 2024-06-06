@@ -1,0 +1,45 @@
+
+======
+dash
+======
+
+Fam
+
+Name - Name
+
+Name, Name - Name, Name
+
+------
+
+(root
+  (family
+    (name_desc (name))
+    (relations
+      (relation
+        (sources (name))
+        (targets (name_desc (name))))
+
+      (relation
+        (sources (name) (name))
+        (targets (name_desc (name)) (name_desc (name))))
+)))
+
+======
+dash + label
+======
+
+Fam
+
+Name - word 2 and word 3 Name
+
+------
+
+(root
+  (family
+    (name_desc (name))
+    (relations
+      (relation
+        (sources (name))
+        (words)
+        (targets (name_desc (name))))
+)))

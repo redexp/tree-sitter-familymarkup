@@ -109,8 +109,37 @@
           "name": "sources"
         },
         {
-          "type": "STRING",
-          "value": "="
+          "type": "FIELD",
+          "name": "arrow",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "="
+              },
+              {
+                "type": "STRING",
+                "value": "-"
+              }
+            ]
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "label",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "words"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          }
         },
         {
           "type": "SYMBOL",
@@ -271,6 +300,11 @@
     "name": {
       "type": "PATTERN",
       "value": "\\p{Lu}[\\p{L}\\-\\d]*",
+      "flags": "u"
+    },
+    "words": {
+      "type": "PATTERN",
+      "value": "\\p{Ll}[\\p{Ll}\\-\\d\\s]*",
       "flags": "u"
     }
   },

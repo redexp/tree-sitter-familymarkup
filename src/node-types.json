@@ -55,7 +55,32 @@
   {
     "type": "relation",
     "named": true,
-    "fields": {},
+    "fields": {
+      "arrow": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "-",
+            "named": false
+          },
+          {
+            "type": "=",
+            "named": false
+          }
+        ]
+      },
+      "label": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "words",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": true,
@@ -148,11 +173,19 @@
     "named": false
   },
   {
+    "type": "-",
+    "named": false
+  },
+  {
     "type": "=",
     "named": false
   },
   {
     "type": "name",
+    "named": true
+  },
+  {
+    "type": "words",
     "named": true
   }
 ]
