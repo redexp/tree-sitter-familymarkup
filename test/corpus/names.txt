@@ -1,0 +1,50 @@
+
+=======
+name dash name
+=======
+
+Fam (Fam-Name, Fam-name, FamFam)
+
+Name + Name = Name (Name-Nam, Name-2, NamNam)
+
+-------
+
+(root
+  (family
+    (name_desc
+      (name)
+      (name_aliases (name) (name) (name)))
+
+    (relations
+      (relation
+        (sources (name) (name))
+        (targets
+          (name_desc
+            (name)
+            (name_aliases (name) (name) (name))))))))
+
+=======
+non ascii letters
+=======
+
+Сімʼя (Рыкало, Ãåąčćęèéêëėįìíîï)
+
+Сергій + Мар'яна-2 = Åąčćęèéê-ëėįìíîï (Йод)
+
+-------
+
+(root
+  (family
+    (name_desc
+      (name)
+      (name_aliases (name) (name)))
+
+    (relations
+      (relation
+        (sources (name) (name))
+        (targets
+          (name_desc
+            (name)
+            (name_aliases (name))))))))
+
+

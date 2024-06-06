@@ -77,7 +77,7 @@ Name <- Name, Name
 
 Name and Name <-> word Name
 
-Name - word
+Name - word and "word"
 
 ----------
 

@@ -46,8 +46,8 @@ module.exports = grammar({
       '(', optional(repeatWith($.name, ',')), ')'
     ),
 
-    name: _ => /\p{Lu}[\p{L}\-\d]*/u,
-    words: _ => /\p{Ll}[\p{Ll}\s]*/u,
+    name: _ => /\p{Lu}[\p{L}\-\d'"]*/u,
+    words: _ => /\p{Ll}[\p{Ll}\s'"]*/u,
     _words: $ => alias($.words, '_words'),
 
     _arrows: _ => choice('=', '<->', '->', '<-', '-'),
