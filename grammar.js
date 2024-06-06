@@ -34,8 +34,8 @@ module.exports = grammar({
       optional($.targets)
     ),
 
-    sources: $ => repeatWith($.name, choice('+', ',')),
-    targets: $ => repeatWith($.name_desc, ','),
+    sources: $ => repeatWith($.name, field('join', choice('+', ','))),
+    targets: $ => repeatWith($.name_desc, field('join', ',')),
 
     name_desc: $ => seq(
       $.name,

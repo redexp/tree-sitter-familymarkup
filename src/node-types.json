@@ -129,7 +129,22 @@
   {
     "type": "sources",
     "named": true,
-    "fields": {},
+    "fields": {
+      "join": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "+",
+            "named": false
+          },
+          {
+            "type": ",",
+            "named": false
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": true,
@@ -144,7 +159,18 @@
   {
     "type": "targets",
     "named": true,
-    "fields": {},
+    "fields": {
+      "join": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": ",",
+            "named": false
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": true,
