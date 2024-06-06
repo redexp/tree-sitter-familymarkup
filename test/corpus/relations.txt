@@ -1,5 +1,6 @@
+
 ========
-relations
+relations one
 ========
 
 Family
@@ -21,4 +22,172 @@ Name0 = Name1 (Name2)
             (name)
             (name_aliases
               (name))))))))
+
+
+========
+relations many
+========
+
+Family (Fam1)
+
+Name0 = Name1 (Name2)
+
+Name0 = Name1 (Name2, Name-3)
+
+---------
+
+(root
+  (family
+    (name_desc
+      (name)
+      (name_aliases (name))
+    )
+    (relations
+      (relation
+        (sources
+          (name))
+        (targets
+          (name_desc
+            (name)
+            (name_aliases (name)))))
+
+      (relation
+        (sources
+          (name))
+        (targets
+          (name_desc
+            (name)
+            (name_aliases (name) (name)))))
+    )
+))
+
+
+========
+relations many names
+========
+
+Family (Fam1, Fam-Fam)
+
+Name, Name-Nam = Name1 (Nam-2, Nam), Name2 (Nam2)
+
+---------
+
+(root
+  (family
+    (name_desc
+      (name)
+      (name_aliases (name) (name))
+    )
+    (relations
+      (relation
+        (sources (name) (name))
+        (targets
+          (name_desc
+            (name)
+            (name_aliases (name) (name)))
+          (name_desc
+            (name)
+            (name_aliases (name)))))
+    )
+))
+
+========
+relations many + family
+========
+
+Family
+
+Name0 = Name1 (Name2)
+
+Name0 = Name1 (Name2)
+
+Family
+
+Name0 = Name1 (Name2)
+
+---------
+
+(root
+  (family
+    (name_desc
+      (name))
+    (relations
+      (relation
+        (sources
+          (name))
+        (targets
+          (name_desc
+            (name)
+            (name_aliases
+              (name)))))
+
+      (relation
+        (sources
+          (name))
+        (targets
+          (name_desc
+            (name)
+            (name_aliases
+              (name)))))
+    )
+  )
+  (family
+    (name_desc
+      (name))
+    (relations
+      (relation
+        (sources
+          (name))
+        (targets
+          (name_desc
+            (name)
+            (name_aliases
+              (name)))))
+    )
+  )
+)
+
+========
+relations many + only name
+========
+
+Family
+
+Name0 = Name1 (Name2)
+
+Name0 = Name1 (Name2)
+
+Family
+
+---------
+
+(root
+  (family
+    (name_desc
+      (name))
+    (relations
+      (relation
+        (sources
+          (name))
+        (targets
+          (name_desc
+            (name)
+            (name_aliases
+              (name)))))
+
+      (relation
+        (sources
+          (name))
+        (targets
+          (name_desc
+            (name)
+            (name_aliases
+              (name)))))
+    )
+  )
+  (family
+    (name_desc
+      (name))
+  )
+)
 
