@@ -142,8 +142,16 @@
           }
         },
         {
-          "type": "SYMBOL",
-          "name": "targets"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "targets"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         }
       ]
     },
@@ -304,7 +312,7 @@
     },
     "words": {
       "type": "PATTERN",
-      "value": "\\p{Ll}[\\p{Ll}\\-\\d\\s]*",
+      "value": "\\p{Ll}[\\p{Ll}\\d\\s]*",
       "flags": "u"
     }
   },
@@ -323,6 +331,9 @@
     ],
     [
       "targets"
+    ],
+    [
+      "relation"
     ]
   ],
   "precedences": [],

@@ -30,6 +30,27 @@ dash + label
 
 Fam
 
+Name - word 2 and word 3
+
+------
+
+(root
+  (family
+    (name_desc (name))
+    (relations
+      (relation
+        (sources (name))
+        (words)
+      )
+)))
+
+
+======
+dash + label + Name
+======
+
+Fam
+
 Name - word 2 and word 3 Name
 
 ------

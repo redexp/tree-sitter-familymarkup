@@ -9,6 +9,7 @@ module.exports = grammar({
     [$.family],
     [$.relations],
     [$.targets],
+    [$.relation],
   ],
 
 	rules: {
@@ -30,7 +31,7 @@ module.exports = grammar({
       $.sources,
       field('arrow', choice('=', '-')),
       field('label', optional($.words)),
-      $.targets
+      optional($.targets)
     ),
 
     sources: $ => repeatWith($.name, choice('+', ',')),
