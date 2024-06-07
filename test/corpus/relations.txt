@@ -259,12 +259,12 @@ relation names with new line
 
 Family
 
-Name + Name =
+Name + Name Fam? =
 Name (Alias)
 Name
 
 Name + Name = word
-Name, Name
+Name, name?
 Name (Alias) and Name
 
 Name - word
@@ -275,6 +275,7 @@ Family2
 Name + Name Fam =
 1. Name
 2. (Sur) Name
+3. girl?
 
 ---------
 
@@ -283,7 +284,10 @@ Name + Name Fam =
     (name_desc (name))
     (relations
       (relation
-        (sources (name_link (name)) (name_link (name)))
+        (sources
+          (name_link (name))
+          (unknown)
+        )
         (targets
           (name_desc
             (name)
@@ -296,7 +300,7 @@ Name + Name Fam =
         (words)
         (targets
           (name_desc (name))
-          (name_desc (name))
+          (unknown)
           (name_desc
             (name)
             (name_aliases (name)))
@@ -325,6 +329,7 @@ Name + Name Fam =
         (targets
           (name_desc (num) (name))
           (name_desc (num) (new_surname (name)) (name))
+          (num_unknown (num) (unknown))
         )
       )
     )
@@ -339,7 +344,7 @@ relation names with new surname
 
 Family
 
-Name + Name =
+Name + Name? =
 (Surname) Name (Alias)
 (Surname) Name
 Name
@@ -351,7 +356,10 @@ Name
     (name_desc (name))
     (relations
       (relation
-        (sources (name_link (name)) (name_link (name)))
+        (sources
+          (name_link (name))
+          (unknown)
+        )
         (targets
           (name_desc
             (new_surname (name))

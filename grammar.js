@@ -38,8 +38,14 @@ module.exports = grammar({
       optional($.targets),
     ),
 
-    sources: $ => repeatWith($.name_link, field('join', choice('+', ',', $._words))),
-    targets: $ => repeatWith($.name_desc, field('join', choice(',', $._nl, $._words))),
+    sources: $ => repeatWith(
+      choice($.name_link, $.unknown),
+      choice('+', ',', $._words)
+    ),
+    targets: $ => repeatWith(
+      choice($.name_desc, $.unknown, $.num_unknown),
+      choice(',', $._nl, $._words)
+    ),
 
     name_link: $ => seq($.name, optional($.name)),
 
@@ -59,6 +65,9 @@ module.exports = grammar({
     name_aliases: $ => seq(
       '(', optional(repeatWith($.name, ',')), ')'
     ),
+
+    unknown: _ => /\p{L}?[\p{L}\-\d'"\s]*\?/u,
+    num_unknown: $ => seq($.num, $.unknown),
 
     name: _ => /\p{Lu}[\p{L}\-\d'"]*/u,
     words: _ => /\p{Ll}[\p{Ll}\s'"]*/u,

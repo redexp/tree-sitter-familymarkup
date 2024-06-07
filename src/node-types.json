@@ -91,6 +91,25 @@
     }
   },
   {
+    "type": "num_unknown",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "num",
+          "named": true
+        },
+        {
+          "type": "unknown",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "relation",
     "named": true,
     "fields": {
@@ -179,32 +198,17 @@
   {
     "type": "sources",
     "named": true,
-    "fields": {
-      "join": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "+",
-            "named": false
-          },
-          {
-            "type": ",",
-            "named": false
-          },
-          {
-            "type": "_words",
-            "named": false
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
       "required": true,
       "types": [
         {
           "type": "name_link",
+          "named": true
+        },
+        {
+          "type": "unknown",
           "named": true
         }
       ]
@@ -213,28 +217,21 @@
   {
     "type": "targets",
     "named": true,
-    "fields": {
-      "join": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": ",",
-            "named": false
-          },
-          {
-            "type": "_words",
-            "named": false
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
       "required": true,
       "types": [
         {
           "type": "name_desc",
+          "named": true
+        },
+        {
+          "type": "num_unknown",
+          "named": true
+        },
+        {
+          "type": "unknown",
           "named": true
         }
       ]
@@ -286,6 +283,10 @@
   },
   {
     "type": "num",
+    "named": true
+  },
+  {
+    "type": "unknown",
     "named": true
   },
   {
