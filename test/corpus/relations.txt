@@ -270,6 +270,12 @@ Name (Alias) and Name
 Name - word
 Name and Name
 
+Family2
+
+Name + Name Fam =
+1. Name
+2. (Sur) Name
+
 ---------
 
 (root
@@ -303,6 +309,22 @@ Name and Name
         (targets
           (name_desc (name))
           (name_desc (name))
+        )
+      )
+    )
+  )
+
+  (family
+    (name_desc (name))
+    (relations
+      (relation
+        (sources
+          (name_link (name))
+          (name_link (name) (name))
+        )
+        (targets
+          (name_desc (num) (name))
+          (name_desc (num) (new_surname (name)) (name))
         )
       )
     )

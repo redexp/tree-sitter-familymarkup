@@ -52,6 +52,10 @@
         {
           "type": "new_surname",
           "named": true
+        },
+        {
+          "type": "num",
+          "named": true
         }
       ]
     }
@@ -278,6 +282,10 @@
   },
   {
     "type": "name",
+    "named": true
+  },
+  {
+    "type": "num",
     "named": true
   },
   {

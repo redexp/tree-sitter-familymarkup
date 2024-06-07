@@ -44,10 +44,13 @@ module.exports = grammar({
     name_link: $ => seq($.name, optional($.name)),
 
     name_desc: $ => seq(
+      optional($.num),
       optional($.new_surname),
       $.name,
       optional($.name_aliases)
     ),
+
+    num: _ => /\d+[.)]?/,
 
     new_surname: $ => seq(
       '(', $.name, ')'

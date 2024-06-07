@@ -346,6 +346,18 @@
           "members": [
             {
               "type": "SYMBOL",
+              "name": "num"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
               "name": "new_surname"
             },
             {
@@ -370,6 +382,10 @@
           ]
         }
       ]
+    },
+    "num": {
+      "type": "PATTERN",
+      "value": "\\d+[.)]?"
     },
     "new_surname": {
       "type": "SEQ",
