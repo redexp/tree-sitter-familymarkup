@@ -16,11 +16,11 @@ Name, Name - Name, Name
     (name_desc (name))
     (relations
       (relation
-        (sources (name))
+        (sources (name_link (name)))
         (targets (name_desc (name))))
 
       (relation
-        (sources (name) (name))
+        (sources (name_link (name)) (name_link (name)))
         (targets (name_desc (name)) (name_desc (name))))
 )))
 
@@ -39,7 +39,7 @@ Name - word and word
     (name_desc (name))
     (relations
       (relation
-        (sources (name))
+        (sources (name_link (name)))
         (words)
       )
 )))
@@ -60,7 +60,7 @@ Name - word and word Name
     (name_desc (name))
     (relations
       (relation
-        (sources (name))
+        (sources (name_link (name)))
         (words)
         (targets (name_desc (name))))
 )))
@@ -86,21 +86,21 @@ Name - word and "word"
     (name_desc (name))
     (relations
       (relation
-        (sources (name))
+        (sources (name_link (name)))
         (words)
         (targets (name_desc (name))))
 
       (relation
-        (sources (name))
+        (sources (name_link (name)))
         (targets (name_desc (name)) (name_desc (name))))
 
       (relation
-        (sources (name) (name))
+        (sources (name_link (name)) (name_link (name)))
         (words)
         (targets (name_desc (name))))
 
       (relation
-        (sources (name))
+        (sources (name_link (name)))
         (words)
       )
 )))

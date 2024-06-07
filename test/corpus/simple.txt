@@ -19,15 +19,13 @@ Name1 = Name2
     (name_desc (name))
     (relations
       (relation
-        (sources
-          (name))
+        (sources (name_link (name)))
         (targets
           (name_desc
             (name))))
 
       (relation
-        (sources
-          (name))
+        (sources (name_link (name)))
         (targets
           (name_desc
             (name))))))
@@ -36,8 +34,7 @@ Name1 = Name2
     (name_desc (name))
     (relations
       (relation
-        (sources
-          (name))
+        (sources (name_link (name)))
         (targets
           (name_desc
             (name)))))))

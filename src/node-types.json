@@ -57,6 +57,21 @@
     }
   },
   {
+    "type": "name_link",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "new_surname",
     "named": true,
     "fields": {},
@@ -185,7 +200,7 @@
       "required": true,
       "types": [
         {
-          "type": "name",
+          "type": "name_link",
           "named": true
         }
       ]

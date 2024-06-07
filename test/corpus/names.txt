@@ -5,7 +5,7 @@ name dash name
 
 Fam (Fam-Name, Fam-name, FamFam)
 
-Name + Name = Name (Name-Nam, Name-2, NamNam)
+Fam Name + Name = Name (Name-Nam, Name-2, NamNam)
 
 -------
 
@@ -17,7 +17,10 @@ Name + Name = Name (Name-Nam, Name-2, NamNam)
 
     (relations
       (relation
-        (sources (name) (name))
+        (sources
+          (name_link (name) (name))
+          (name_link (name))
+        )
         (targets
           (name_desc
             (name)
@@ -29,7 +32,8 @@ non ascii letters
 
 Сімʼя (Рыкало, Ãåąčćęèéêëėįìíîï)
 
-Сергій + Мар'яна-2 = Åąčćęèéê-ëėįìíîï (Йод)
+Сергій + Ол"ійник Мар'яна-2 =
+(Ćęèéê) Åąčćęèéê-ëėįìíîï (Йод)
 
 -------
 
@@ -41,9 +45,13 @@ non ascii letters
 
     (relations
       (relation
-        (sources (name) (name))
+        (sources
+          (name_link (name))
+          (name_link (name) (name))
+        )
         (targets
           (name_desc
+            (new_surname (name))
             (name)
             (name_aliases (name))))))))
 

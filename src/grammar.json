@@ -222,7 +222,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "name"
+          "name": "name_link"
         },
         {
           "type": "CHOICE",
@@ -255,7 +255,7 @@
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "name"
+                    "name": "name_link"
                   }
                 ]
               }
@@ -309,6 +309,27 @@
                   }
                 ]
               }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "name_link": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "name"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "name"
             },
             {
               "type": "BLANK"

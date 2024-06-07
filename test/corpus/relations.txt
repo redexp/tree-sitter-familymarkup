@@ -15,7 +15,7 @@ Name0 = Name1 (Name2)
       (name))
     (relations
       (relation
-        (sources (name))
+        (sources (name_link (name)))
         (targets
           (name_desc
             (name)
@@ -39,7 +39,7 @@ Name0 =
       (name))
     (relations
       (relation
-        (sources (name))
+        (sources (name_link (name)))
       ))))
 
 
@@ -63,16 +63,14 @@ Name0 = Name1 (Name2, Name-3)
     )
     (relations
       (relation
-        (sources
-          (name))
+        (sources (name_link (name)))
         (targets
           (name_desc
             (name)
             (name_aliases (name)))))
 
       (relation
-        (sources
-          (name))
+        (sources (name_link (name)))
         (targets
           (name_desc
             (name)
@@ -99,7 +97,7 @@ Name, Name-Nam = Name1 (Nam-2, Nam), Name2 (Nam2)
     )
     (relations
       (relation
-        (sources (name) (name))
+        (sources (name_link (name)) (name_link (name)))
         (targets
           (name_desc
             (name)
@@ -132,8 +130,7 @@ Name0 = Name1 (Name2)
       (name))
     (relations
       (relation
-        (sources
-          (name))
+        (sources (name_link (name)))
         (targets
           (name_desc
             (name)
@@ -141,8 +138,7 @@ Name0 = Name1 (Name2)
               (name)))))
 
       (relation
-        (sources
-          (name))
+        (sources (name_link (name)))
         (targets
           (name_desc
             (name)
@@ -155,8 +151,7 @@ Name0 = Name1 (Name2)
       (name))
     (relations
       (relation
-        (sources
-          (name))
+        (sources (name_link (name)))
         (targets
           (name_desc
             (name)
@@ -186,8 +181,7 @@ Family
       (name))
     (relations
       (relation
-        (sources
-          (name))
+        (sources (name_link (name)))
         (targets
           (name_desc
             (name)
@@ -195,8 +189,7 @@ Family
               (name)))))
 
       (relation
-        (sources
-          (name))
+        (sources (name_link (name)))
         (targets
           (name_desc
             (name)
@@ -227,7 +220,7 @@ Name0 and Name - word
     (name_desc (name))
     (relations
       (relation
-        (sources (name) (name))
+        (sources (name_link (name)) (name_link (name)))
         (words)
       )
     )
@@ -249,7 +242,7 @@ Name0 and Name - Name and Name
     (name_desc (name))
     (relations
       (relation
-        (sources (name) (name))
+        (sources (name_link (name)) (name_link (name)))
         (targets
           (name_desc (name))
           (name_desc (name))
@@ -284,7 +277,7 @@ Name and Name
     (name_desc (name))
     (relations
       (relation
-        (sources (name) (name))
+        (sources (name_link (name)) (name_link (name)))
         (targets
           (name_desc
             (name)
@@ -293,7 +286,7 @@ Name and Name
         )
       )
       (relation
-        (sources (name) (name))
+        (sources (name_link (name)) (name_link (name)))
         (words)
         (targets
           (name_desc (name))
@@ -305,7 +298,7 @@ Name and Name
         )
       )
       (relation
-        (sources (name))
+        (sources (name_link (name)))
         (words)
         (targets
           (name_desc (name))
@@ -336,7 +329,7 @@ Name
     (name_desc (name))
     (relations
       (relation
-        (sources (name) (name))
+        (sources (name_link (name)) (name_link (name)))
         (targets
           (name_desc
             (new_surname (name))
