@@ -259,3 +259,60 @@ Name0 and Name - Name and Name
   )
 )
 
+
+========
+relation names with new line
+========
+
+Family
+
+Name + Name =
+Name (Alias)
+Name
+
+Name + Name = word
+Name, Name
+Name (Alias) and Name
+
+Name - word
+Name and Name
+
+---------
+
+(root
+  (family
+    (name_desc (name))
+    (relations
+      (relation
+        (sources (name) (name))
+        (targets
+          (name_desc
+            (name)
+            (name_aliases (name)))
+          (name_desc (name))
+        )
+      )
+      (relation
+        (sources (name) (name))
+        (words)
+        (targets
+          (name_desc (name))
+          (name_desc (name))
+          (name_desc
+            (name)
+            (name_aliases (name)))
+          (name_desc (name))
+        )
+      )
+      (relation
+        (sources (name))
+        (words)
+        (targets
+          (name_desc (name))
+          (name_desc (name))
+        )
+      )
+    )
+  )
+)
+

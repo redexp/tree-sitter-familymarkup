@@ -1,19 +1,24 @@
 module.exports = grammar({
 	name: 'familymarkup',
 
-	externals: $ => [
-		$._nl_eof,
-	],
-
   conflicts: $ => [
     [$.family],
     [$.relations],
+    [$.relation],
+    [$.targets],
   ],
 
-	rules: {
-		root: $ => repeatWith($.family, $._multi_newline),
+  extras: _ => [' ', '\t'],
 
-    _multi_newline: _ => /\r?\n\s*\r?\n/,
+	rules: {
+		root: $ => seq(
+      optional(choice($._nl, $._multi_newline)),
+      repeatWith($.family, $._multi_newline),
+      optional(choice($._nl, $._multi_newline)),
+    ),
+
+    _multi_newline: _ => prec(2, /\r?\n[\r\n\s]*\r?\n/),
+    _nl: _ => prec(1, /\r?\n/),
 
 		family: $ => seq(
       $.name_desc,
@@ -29,11 +34,12 @@ module.exports = grammar({
       $.sources,
       field('arrow', $._arrows),
       field('label', optional($.words)),
-      optional($.targets)
+      optional($._nl),
+      optional($.targets),
     ),
 
     sources: $ => repeatWith($.name, field('join', choice('+', ',', $._words))),
-    targets: $ => repeatWith($.name_desc, field('join', choice(',', $._words))),
+    targets: $ => repeatWith($.name_desc, field('join', choice(',', $._nl, $._words))),
 
     name_desc: $ => seq(
       $.name,
@@ -57,6 +63,6 @@ module.exports = grammar({
 function repeatWith(rule, sep) {
   return seq(
     rule,
-    repeat(seq(sep, rule))
+    optional(repeat(seq(sep, rule)))
   );
 }
