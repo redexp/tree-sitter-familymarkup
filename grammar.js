@@ -42,10 +42,13 @@ module.exports = grammar({
     targets: $ => repeatWith($.name_desc, field('join', choice(',', $._nl, $._words))),
 
     name_desc: $ => seq(
+      optional($.new_surname),
       $.name,
-      optional(
-        $.name_aliases
-      )
+      optional($.name_aliases)
+    ),
+
+    new_surname: $ => seq(
+      '(', $.name, ')'
     ),
 
     name_aliases: $ => seq(

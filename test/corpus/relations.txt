@@ -316,3 +316,40 @@ Name and Name
   )
 )
 
+
+
+========
+relation names with new surname
+========
+
+Family
+
+Name + Name =
+(Surname) Name (Alias)
+(Surname) Name
+Name
+
+---------
+
+(root
+  (family
+    (name_desc (name))
+    (relations
+      (relation
+        (sources (name) (name))
+        (targets
+          (name_desc
+            (new_surname (name))
+            (name)
+            (name_aliases (name)))
+          (name_desc
+            (new_surname (name))
+            (name))
+          (name_desc
+            (name))
+        )
+      )
+    )
+  )
+)
+
