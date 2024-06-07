@@ -82,20 +82,12 @@
       ]
     },
     "_multi_newline": {
-      "type": "PREC",
-      "value": 2,
-      "content": {
-        "type": "PATTERN",
-        "value": "\\r?\\n[\\r\\n\\s]*\\r?\\n"
-      }
+      "type": "PATTERN",
+      "value": "\\r?\\n[\\r\\n\\s]*\\r?\\n"
     },
     "_nl": {
-      "type": "PREC",
-      "value": 1,
-      "content": {
-        "type": "PATTERN",
-        "value": "\\r?\\n"
-      }
+      "type": "PATTERN",
+      "value": "\\r?\\n"
     },
     "family": {
       "type": "SEQ",

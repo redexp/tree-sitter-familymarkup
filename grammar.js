@@ -17,8 +17,8 @@ module.exports = grammar({
       optional(choice($._nl, $._multi_newline)),
     ),
 
-    _multi_newline: _ => prec(2, /\r?\n[\r\n\s]*\r?\n/),
-    _nl: _ => prec(1, /\r?\n/),
+    _multi_newline: _ => /\r?\n[\r\n\s]*\r?\n/,
+    _nl: _ => /\r?\n/,
 
 		family: $ => seq(
       $.name_desc,
