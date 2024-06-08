@@ -43,7 +43,7 @@ module.exports = grammar({
       choice('+', ',', $._words)
     ),
     targets: $ => repeatWith(
-      choice($.name_desc, $.unknown, $.num_unknown),
+      choice($.name_desc, $.unknown, $.num_unknown, $.comment),
       choice(',', $._nl, $._words)
     ),
 
@@ -65,6 +65,8 @@ module.exports = grammar({
     name_aliases: $ => seq(
       '(', optional(repeatWith($.name, ',')), ')'
     ),
+
+    comment: _ => seq(choice('*', '/', '#'), optional(/[^\n]+/)),
 
     unknown: _ => /\p{L}?[\p{L}\-\d'"\s]*\?/u,
     num_unknown: $ => seq($.num, $.unknown),

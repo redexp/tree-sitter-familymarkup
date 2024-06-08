@@ -376,3 +376,56 @@ Name
   )
 )
 
+
+
+========
+relation names with comments
+========
+
+Family
+
+Name + ? =
+(Surname) Name (Alias)
+# some (random) - ? = text
+(Surname) Name
+* other крилик # asd / asd
+?
+// test
+// two
+
+Fam
+
+---------
+
+(root
+  (family
+    (name_desc (name))
+    (relations
+      (relation
+        (sources
+          (name_link (name))
+          (unknown)
+        )
+        (targets
+          (name_desc
+            (new_surname (name))
+            (name)
+            (name_aliases (name)))
+          (comment)
+          (name_desc
+            (new_surname (name))
+            (name))
+          (comment)
+          (unknown)
+          (comment)
+          (comment)
+        )
+      )
+    )
+  )
+
+  (family
+    (name_desc (name))
+  )
+)
+
