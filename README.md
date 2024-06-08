@@ -1,1 +1,1 @@
-# tree-sitter-family-markup
+# tree-sitter-familymarkup
