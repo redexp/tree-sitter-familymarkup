@@ -11,18 +11,18 @@ Fam Name + Name = Name (Name-Nam, Name-2, NamNam)
 
 (root
   (family
-    (name_desc
+    (name_def
       (name)
       (name_aliases (name) (name) (name)))
 
     (relations
       (relation
         (sources
-          (name_link (name) (name))
-          (name_link (name))
+          (name_ref (name) (name))
+          (name_ref (name))
         )
         (targets
-          (name_desc
+          (name_def
             (name)
             (name_aliases (name) (name) (name))))))))
 
@@ -39,18 +39,18 @@ non ascii letters
 
 (root
   (family
-    (name_desc
+    (name_def
       (name)
       (name_aliases (name) (name)))
 
     (relations
       (relation
         (sources
-          (name_link (name))
-          (name_link (name) (name))
+          (name_ref (name))
+          (name_ref (name) (name))
         )
         (targets
-          (name_desc
+          (name_def
             (new_surname (name))
             (name)
             (name_aliases (name))))))))

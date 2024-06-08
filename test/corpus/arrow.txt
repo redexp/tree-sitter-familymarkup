@@ -13,15 +13,15 @@ Name, Name - Name, Name
 
 (root
   (family
-    (name_desc (name))
+    (name_def (name))
     (relations
       (relation
-        (sources (name_link (name)))
-        (targets (name_desc (name))))
+        (sources (name_ref (name)))
+        (targets (name_def (name))))
 
       (relation
-        (sources (name_link (name)) (name_link (name)))
-        (targets (name_desc (name)) (name_desc (name))))
+        (sources (name_ref (name)) (name_ref (name)))
+        (targets (name_def (name)) (name_def (name))))
 )))
 
 ======
@@ -36,10 +36,10 @@ Name - word and word
 
 (root
   (family
-    (name_desc (name))
+    (name_def (name))
     (relations
       (relation
-        (sources (name_link (name)))
+        (sources (name_ref (name)))
         (words)
       )
 )))
@@ -57,12 +57,12 @@ Name - word and word Name
 
 (root
   (family
-    (name_desc (name))
+    (name_def (name))
     (relations
       (relation
-        (sources (name_link (name)))
+        (sources (name_ref (name)))
         (words)
-        (targets (name_desc (name))))
+        (targets (name_def (name))))
 )))
 
 ======
@@ -83,24 +83,24 @@ Name - word and "word"
 
 (root
   (family
-    (name_desc (name))
+    (name_def (name))
     (relations
       (relation
-        (sources (name_link (name)))
+        (sources (name_ref (name)))
         (words)
-        (targets (name_desc (name))))
+        (targets (name_def (name))))
 
       (relation
-        (sources (name_link (name)))
-        (targets (name_desc (name)) (name_desc (name))))
+        (sources (name_ref (name)))
+        (targets (name_def (name)) (name_def (name))))
 
       (relation
-        (sources (name_link (name)) (name_link (name)))
+        (sources (name_ref (name)) (name_ref (name)))
         (words)
-        (targets (name_desc (name))))
+        (targets (name_def (name))))
 
       (relation
-        (sources (name_link (name)))
+        (sources (name_ref (name)))
         (words)
       )
 )))

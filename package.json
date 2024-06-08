@@ -1,7 +1,7 @@
 {
   "name": "tree-sitter-familymarkup",
   "description": "Tree sitter for FamilyMarkup",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "main": "bindings/node",
   "types": "bindings/node",
   "scripts": {
@@ -33,7 +33,7 @@
       "file-types": [
         "fm"
       ],
-      "injection-regex": "^fm"
+      "highlights": "queries/highlights.scm"
     }
   ],
   "dependencies": {

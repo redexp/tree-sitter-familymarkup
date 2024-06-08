@@ -21,7 +21,11 @@ module.exports = grammar({
     _nl: _ => /\r?\n/,
 
 		family: $ => seq(
-      $.name_desc,
+      $.name_def,
+      optional(seq(
+        $._nl,
+        repeatWith($.comment, $._nl)
+      )),
       optional(seq(
         $._multi_newline,
         $.relations
@@ -39,17 +43,17 @@ module.exports = grammar({
     ),
 
     sources: $ => repeatWith(
-      choice($.name_link, $.unknown),
-      choice('+', ',', $._words)
+      choice($.name_ref, $.unknown),
+      field('delimiter', choice('+', ',', $._words))
     ),
     targets: $ => repeatWith(
-      choice($.name_desc, $.unknown, $.num_unknown, $.comment),
-      choice(',', $._nl, $._words)
+      choice($.name_def, $.unknown, $.num_unknown, $.comment),
+      field('delimiter', choice(',', $._nl, $._words))
     ),
 
-    name_link: $ => seq($.name, optional($.name)),
+    name_ref: $ => seq($.name, optional($.name)),
 
-    name_desc: $ => seq(
+    name_def: $ => seq(
       optional($.num),
       optional($.new_surname),
       $.name,

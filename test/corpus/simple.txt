@@ -16,27 +16,27 @@ Name1 = Name2
 
 (root
   (family
-    (name_desc (name))
+    (name_def (name))
     (relations
       (relation
-        (sources (name_link (name)))
+        (sources (name_ref (name)))
         (targets
-          (name_desc
+          (name_def
             (name))))
 
       (relation
-        (sources (name_link (name)))
+        (sources (name_ref (name)))
         (targets
-          (name_desc
+          (name_def
             (name))))))
 
   (family
-    (name_desc (name))
+    (name_def (name))
     (relations
       (relation
-        (sources (name_link (name)))
+        (sources (name_ref (name)))
         (targets
-          (name_desc
+          (name_def
             (name)))))))
 
 

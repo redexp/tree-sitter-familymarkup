@@ -11,13 +11,13 @@ Name0 = Name1 (Name2)
 
 (root
   (family
-    (name_desc
+    (name_def
       (name))
     (relations
       (relation
-        (sources (name_link (name)))
+        (sources (name_ref (name)))
         (targets
-          (name_desc
+          (name_def
             (name)
             (name_aliases (name))
           ))))))
@@ -35,11 +35,11 @@ Name0 =
 
 (root
   (family
-    (name_desc
+    (name_def
       (name))
     (relations
       (relation
-        (sources (name_link (name)))
+        (sources (name_ref (name)))
       ))))
 
 
@@ -57,22 +57,22 @@ Name0 = Name1 (Name2, Name-3)
 
 (root
   (family
-    (name_desc
+    (name_def
       (name)
       (name_aliases (name))
     )
     (relations
       (relation
-        (sources (name_link (name)))
+        (sources (name_ref (name)))
         (targets
-          (name_desc
+          (name_def
             (name)
             (name_aliases (name)))))
 
       (relation
-        (sources (name_link (name)))
+        (sources (name_ref (name)))
         (targets
-          (name_desc
+          (name_def
             (name)
             (name_aliases (name) (name)))))
     )
@@ -91,18 +91,18 @@ Name, Name-Nam = Name1 (Nam-2, Nam), Name2 (Nam2)
 
 (root
   (family
-    (name_desc
+    (name_def
       (name)
       (name_aliases (name) (name))
     )
     (relations
       (relation
-        (sources (name_link (name)) (name_link (name)))
+        (sources (name_ref (name)) (name_ref (name)))
         (targets
-          (name_desc
+          (name_def
             (name)
             (name_aliases (name) (name)))
-          (name_desc
+          (name_def
             (name)
             (name_aliases (name)))))
     )
@@ -126,34 +126,34 @@ Name0 = Name1 (Name2)
 
 (root
   (family
-    (name_desc
+    (name_def
       (name))
     (relations
       (relation
-        (sources (name_link (name)))
+        (sources (name_ref (name)))
         (targets
-          (name_desc
+          (name_def
             (name)
             (name_aliases
               (name)))))
 
       (relation
-        (sources (name_link (name)))
+        (sources (name_ref (name)))
         (targets
-          (name_desc
+          (name_def
             (name)
             (name_aliases
               (name)))))
     )
   )
   (family
-    (name_desc
+    (name_def
       (name))
     (relations
       (relation
-        (sources (name_link (name)))
+        (sources (name_ref (name)))
         (targets
-          (name_desc
+          (name_def
             (name)
             (name_aliases
               (name)))))
@@ -177,28 +177,28 @@ Family
 
 (root
   (family
-    (name_desc
+    (name_def
       (name))
     (relations
       (relation
-        (sources (name_link (name)))
+        (sources (name_ref (name)))
         (targets
-          (name_desc
+          (name_def
             (name)
             (name_aliases
               (name)))))
 
       (relation
-        (sources (name_link (name)))
+        (sources (name_ref (name)))
         (targets
-          (name_desc
+          (name_def
             (name)
             (name_aliases
               (name)))))
     )
   )
   (family
-    (name_desc
+    (name_def
       (name))
   )
 )
@@ -217,10 +217,10 @@ Name0 and Name - word
 
 (root
   (family
-    (name_desc (name))
+    (name_def (name))
     (relations
       (relation
-        (sources (name_link (name)) (name_link (name)))
+        (sources (name_ref (name)) (name_ref (name)))
         (words)
       )
     )
@@ -239,13 +239,13 @@ Name0 and Name - Name and Name
 
 (root
   (family
-    (name_desc (name))
+    (name_def (name))
     (relations
       (relation
-        (sources (name_link (name)) (name_link (name)))
+        (sources (name_ref (name)) (name_ref (name)))
         (targets
-          (name_desc (name))
-          (name_desc (name))
+          (name_def (name))
+          (name_def (name))
         )
       )
     )
@@ -281,54 +281,54 @@ Name + Name Fam =
 
 (root
   (family
-    (name_desc (name))
+    (name_def (name))
     (relations
       (relation
         (sources
-          (name_link (name))
+          (name_ref (name))
           (unknown)
         )
         (targets
-          (name_desc
+          (name_def
             (name)
             (name_aliases (name)))
-          (name_desc (name))
+          (name_def (name))
         )
       )
       (relation
-        (sources (name_link (name)) (name_link (name)))
+        (sources (name_ref (name)) (name_ref (name)))
         (words)
         (targets
-          (name_desc (name))
+          (name_def (name))
           (unknown)
-          (name_desc
+          (name_def
             (name)
             (name_aliases (name)))
-          (name_desc (name))
+          (name_def (name))
         )
       )
       (relation
-        (sources (name_link (name)))
+        (sources (name_ref (name)))
         (words)
         (targets
-          (name_desc (name))
-          (name_desc (name))
+          (name_def (name))
+          (name_def (name))
         )
       )
     )
   )
 
   (family
-    (name_desc (name))
+    (name_def (name))
     (relations
       (relation
         (sources
-          (name_link (name))
-          (name_link (name) (name))
+          (name_ref (name))
+          (name_ref (name) (name))
         )
         (targets
-          (name_desc (num) (name))
-          (name_desc (num) (new_surname (name)) (name))
+          (name_def (num) (name))
+          (name_def (num) (new_surname (name)) (name))
           (num_unknown (num) (unknown))
         )
       )
@@ -353,22 +353,22 @@ Name
 
 (root
   (family
-    (name_desc (name))
+    (name_def (name))
     (relations
       (relation
         (sources
-          (name_link (name))
+          (name_ref (name))
           (unknown)
         )
         (targets
-          (name_desc
+          (name_def
             (new_surname (name))
             (name)
             (name_aliases (name)))
-          (name_desc
+          (name_def
             (new_surname (name))
             (name))
-          (name_desc
+          (name_def
             (name))
         )
       )
@@ -383,6 +383,8 @@ relation names with comments
 ========
 
 Family
+# some desc
+# some desc
 
 Name + ? =
 (Surname) Name (Alias)
@@ -399,20 +401,22 @@ Fam
 
 (root
   (family
-    (name_desc (name))
+    (name_def (name))
+    (comment)
+    (comment)
     (relations
       (relation
         (sources
-          (name_link (name))
+          (name_ref (name))
           (unknown)
         )
         (targets
-          (name_desc
+          (name_def
             (new_surname (name))
             (name)
             (name_aliases (name)))
           (comment)
-          (name_desc
+          (name_def
             (new_surname (name))
             (name))
           (comment)
@@ -425,7 +429,7 @@ Fam
   )
 
   (family
-    (name_desc (name))
+    (name_def (name))
   )
 )
 

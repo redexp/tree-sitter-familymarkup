@@ -1,0 +1,43 @@
+Family
+// ^ constant.builtin
+
+Name + ? =
+// ^ constant
+//   ^ operator
+//     ^ keyword
+//       ^ operator
+(Surname) Name (Alias)
+// ^ constant.builtin
+//        ^ constant
+//              ^ constant
+(Surname) Name
+// ^ constant.builtin
+//        ^ constant
+girl?
+// ^ keyword
+?
+// <- keyword
+
+Name - word
+// ^ constant
+//   ^ operator
+//     ^ type
+
+Name, Fam Name -> word Name and Name
+// ^ constant
+//  ^ punctuation.delimiter
+//    ^ constant.builtin
+//        ^ constant
+//             ^ operator
+//                ^ type
+//                     ^ constant
+//                          ^ punctuation.delimiter
+//                              ^ constant
+
+Name + Name =
+1. Name
+// <- number
+// ^ constant
+2) Name
+// <- number
+// ^ constant
