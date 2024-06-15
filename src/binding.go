@@ -1,8 +1,8 @@
-package tree_sitter_familymarkup
+package src
 
 // #cgo CFLAGS: -std=c11 -fPIC
-// #include "../../src/parser.c"
-// // NOTE: if your language has an external scanner, add it here.
+// #include "./tree_sitter/parser.h"
+//TSLanguage *tree_sitter_familymarkup();
 import "C"
 
 import "unsafe"
