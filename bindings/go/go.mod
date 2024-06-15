@@ -1,4 +1,4 @@
-module github.com/tree-sitter/tree-sitter-familymarkup
+module github.com/redexp/tree-sitter-familymarkup
 
 go 1.22
 
