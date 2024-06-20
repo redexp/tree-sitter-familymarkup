@@ -1,40 +1,64 @@
-((name) @constant (#is-not? local))
+(sources
+  (name_ref (name) @constant.name.ref)
+)
+
+(targets
+  (name_def (name) @constant.name.ref)
+)
+
+(targets
+  (name_def 
+    (name_aliases (name) @constant.name.def.alias)
+  )
+)
+
+(relation
+  (sources delimiter: "+")
+  (targets
+    (name_def
+      (name) @constant.name.def
+    )
+  )
+)
 
 (family
   .
   (name_def
-    (name) @constant.builtin
+    (name) @constant.builtin.family_name
+  )
+)
+
+(family
+  .
+  (name_def
+    (name_aliases
+      (name) @constant.builtin.family_name.alias
+    )
   )
 )
 
 (name_ref
   .
-  (name) @constant.builtin
+  (name) @constant.builtin.family_name.ref
   .
   (name)
 )
 
 (new_surname
-  (name) @constant.builtin
+  (name) @constant.builtin.family_name.ref
 )
 
-(unknown) @keyword
+(unknown) @keyword.unknown
 
 (comment) @comment
 
-(num) @number
+(num) @number.target_num
 
-[
-  ","
-  ] @punctuation.delimiter
+(sources delimiter: _ @punctuation.delimiter.sources)
+(targets delimiter: _ @punctuation.delimiter.targets)
 
-(sources delimiter: _ @punctuation.delimiter)
-(targets delimiter: _ @punctuation.delimiter)
+"+" @operator.sources.join
 
-[
-  "+"
-] @operator
+(relation arrow: _ @operator.arrow)
 
-(relation arrow: _ @operator)
-
-(relation label: _ @type)
+(relation label: _ @type.label)
