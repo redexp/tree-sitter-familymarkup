@@ -285,6 +285,11 @@
     }
   },
   {
+    "type": "unknown",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "#",
     "named": false
   },
@@ -333,6 +338,10 @@
     "named": false
   },
   {
+    "type": "?",
+    "named": false
+  },
+  {
     "type": "_words",
     "named": false
   },
@@ -342,10 +351,6 @@
   },
   {
     "type": "num",
-    "named": true
-  },
-  {
-    "type": "unknown",
     "named": true
   },
   {
