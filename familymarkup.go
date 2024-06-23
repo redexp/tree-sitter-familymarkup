@@ -17,16 +17,17 @@ func GetHighlightQuery() (*sitter.Query, error) {
 	return sitter.NewQuery(highlightQuery, GetLanguage())
 }
 
-func GetHighlightLegend() (map[uint32]string, error) {
+func GetHighlightLegend() ([]string, error) {
 	query, err := GetHighlightQuery()
 
 	if err != nil {
 		return nil, err
 	}
 
-	legend := make(map[uint32]string)
-
 	count := query.CaptureCount()
+
+	legend := make([]string, count)
+
 	for i := uint32(0); i < count; i++ {
 		legend[i] = query.CaptureNameForId(i)
 	}
