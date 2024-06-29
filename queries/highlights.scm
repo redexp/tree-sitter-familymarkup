@@ -21,19 +21,13 @@
   )
 )
 
-(family
-  .
-  (name_def
-    (name) @constant.builtin.family_name
-  )
+(family_name
+  (name) @constant.builtin.family_name
 )
 
-(family
-  .
-  (name_def
-    (name_aliases
-      (name) @constant.builtin.family_name.alias
-    )
+(family_name
+  (name_aliases
+    (name) @constant.builtin.family_name.alias
   )
 )
 

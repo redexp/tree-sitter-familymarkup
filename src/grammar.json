@@ -94,7 +94,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "name_def"
+          "name": "family_name"
         },
         {
           "type": "CHOICE",
@@ -424,6 +424,27 @@
             {
               "type": "SYMBOL",
               "name": "name"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "family_name": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "name"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "name_aliases"
             },
             {
               "type": "BLANK"

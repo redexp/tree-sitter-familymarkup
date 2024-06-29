@@ -21,7 +21,7 @@ module.exports = grammar({
     _nl: _ => /\r?\n/,
 
 		family: $ => seq(
-      $.name_def,
+      $.family_name,
       optional(seq(
         $._nl,
         repeatWith($.comment, $._nl)
@@ -52,6 +52,11 @@ module.exports = grammar({
     ),
 
     name_ref: $ => seq($.name, optional($.name)),
+
+    family_name: $ => seq(
+      $.name,
+      optional($.name_aliases)
+    ),
 
     name_def: $ => seq(
       optional($.num),

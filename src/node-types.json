@@ -17,11 +17,30 @@
           "named": true
         },
         {
-          "type": "name_def",
+          "type": "family_name",
           "named": true
         },
         {
           "type": "relations",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "family_name",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "name",
+          "named": true
+        },
+        {
+          "type": "name_aliases",
           "named": true
         }
       ]

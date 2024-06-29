@@ -16,7 +16,7 @@ Name1 = Name2
 
 (root
   (family
-    (name_def (name))
+    (family_name (name))
     (relations
       (relation
         (sources (name_ref (name)))
@@ -31,7 +31,7 @@ Name1 = Name2
             (name))))))
 
   (family
-    (name_def (name))
+    (family_name (name))
     (relations
       (relation
         (sources (name_ref (name)))

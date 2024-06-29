@@ -5,7 +5,7 @@ Family + EOF
 Family
 ---------------
 
-(root (family (name_def (name))))
+(root (family (family_name (name))))
 
 ======
 Family + Family + EOF
@@ -17,8 +17,8 @@ Family
 ---------------
 
 (root
-  (family (name_def (name)))
-  (family (name_def (name)))
+  (family (family_name (name)))
+  (family (family_name (name)))
 )
 
 ======
@@ -32,7 +32,7 @@ Name = Name
 
 (root
   (family
-    (name_def
+    (family_name
       (name))
     (relations
       (relation
@@ -55,7 +55,7 @@ Family
 
 (root
   (family
-    (name_def
+    (family_name
       (name))
     (relations
       (relation
@@ -64,6 +64,6 @@ Family
           (name_def
             (name))))))
   (family
-    (name_def
+    (family_name
       (name))))
 

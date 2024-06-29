@@ -11,7 +11,7 @@ Fam Name + Name = Name (Name-Nam, Name-2, NamNam)
 
 (root
   (family
-    (name_def
+    (family_name
       (name)
       (name_aliases (name) (name) (name)))
 
@@ -39,7 +39,7 @@ non ascii letters
 
 (root
   (family
-    (name_def
+    (family_name
       (name)
       (name_aliases (name) (name)))
 

@@ -11,7 +11,7 @@ Name0 = Name1 (Name2)
 
 (root
   (family
-    (name_def
+    (family_name
       (name))
     (relations
       (relation
@@ -35,7 +35,7 @@ Name0 =
 
 (root
   (family
-    (name_def
+    (family_name
       (name))
     (relations
       (relation
@@ -57,7 +57,7 @@ Name0 = Name1 (Name2, Name-3)
 
 (root
   (family
-    (name_def
+    (family_name
       (name)
       (name_aliases (name))
     )
@@ -91,7 +91,7 @@ Name, Name-Nam = Name1 (Nam-2, Nam), Name2 (Nam2)
 
 (root
   (family
-    (name_def
+    (family_name
       (name)
       (name_aliases (name) (name))
     )
@@ -126,7 +126,7 @@ Name0 = Name1 (Name2)
 
 (root
   (family
-    (name_def
+    (family_name
       (name))
     (relations
       (relation
@@ -147,7 +147,7 @@ Name0 = Name1 (Name2)
     )
   )
   (family
-    (name_def
+    (family_name
       (name))
     (relations
       (relation
@@ -177,7 +177,7 @@ Family
 
 (root
   (family
-    (name_def
+    (family_name
       (name))
     (relations
       (relation
@@ -198,7 +198,7 @@ Family
     )
   )
   (family
-    (name_def
+    (family_name
       (name))
   )
 )
@@ -217,7 +217,7 @@ Name0 and Name - word
 
 (root
   (family
-    (name_def (name))
+    (family_name (name))
     (relations
       (relation
         (sources (name_ref (name)) (name_ref (name)))
@@ -239,7 +239,7 @@ Name0 and Name - Name and Name
 
 (root
   (family
-    (name_def (name))
+    (family_name (name))
     (relations
       (relation
         (sources (name_ref (name)) (name_ref (name)))
@@ -281,7 +281,7 @@ Name + Name Fam =
 
 (root
   (family
-    (name_def (name))
+    (family_name (name))
     (relations
       (relation
         (sources
@@ -319,7 +319,7 @@ Name + Name Fam =
   )
 
   (family
-    (name_def (name))
+    (family_name (name))
     (relations
       (relation
         (sources
@@ -353,7 +353,7 @@ Name
 
 (root
   (family
-    (name_def (name))
+    (family_name (name))
     (relations
       (relation
         (sources
@@ -401,7 +401,7 @@ Fam
 
 (root
   (family
-    (name_def (name))
+    (family_name (name))
     (comment)
     (comment)
     (relations
@@ -429,7 +429,7 @@ Fam
   )
 
   (family
-    (name_def (name))
+    (family_name (name))
   )
 )
 
