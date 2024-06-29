@@ -2,6 +2,7 @@ package familymarkup
 
 import (
 	_ "embed"
+
 	binding "github.com/redexp/tree-sitter-familymarkup/src"
 	sitter "github.com/smacker/go-tree-sitter"
 )
@@ -35,7 +36,7 @@ func GetHighlightLegend() ([]string, error) {
 	return legend, nil
 }
 
-func GetHighlightCaptures(tree *sitter.Node) (list []sitter.QueryCapture, err error) {
+func GetHighlightCaptures(tree *sitter.Node) ([]*sitter.QueryCapture, error) {
 	query, err := GetHighlightQuery()
 
 	if err != nil {
@@ -45,6 +46,7 @@ func GetHighlightCaptures(tree *sitter.Node) (list []sitter.QueryCapture, err er
 	cursor := sitter.NewQueryCursor()
 	cursor.Exec(query, tree)
 
+	list := make([]*sitter.QueryCapture, 0)
 	var prev *sitter.QueryCapture
 
 	for {
@@ -57,10 +59,10 @@ func GetHighlightCaptures(tree *sitter.Node) (list []sitter.QueryCapture, err er
 		for _, cap := range match.Captures {
 			if prev != nil && prev.Node.Equal(cap.Node) {
 				if cap.Index > prev.Index {
-					list[len(list)-1] = cap
+					list[len(list)-1] = &cap
 				}
 			} else {
-				list = append(list, cap)
+				list = append(list, &cap)
 			}
 
 			prev = &cap
