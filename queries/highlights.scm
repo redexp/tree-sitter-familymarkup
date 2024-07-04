@@ -22,31 +22,31 @@
 )
 
 (family_name
-  (name) @constant.builtin.family_name
+  (name) @constant.family_name
 )
 
 (family_name
   (name_aliases
-    (name) @constant.builtin.family_name.alias
+    (name) @constant.family_name.alias
   )
 )
 
 (name_ref
   .
-  (name) @constant.builtin.family_name.ref
+  (name) @constant.family_name.ref
   .
   (name)
 )
 
 (new_surname
-  (name) @constant.builtin.family_name.ref
+  (name) @constant.family_name.ref
 )
 
-(unknown) @keyword.unknown
+(unknown) @string.unknown
 
 (comment) @comment
 
-(num) @number.target_num
+(num) @number.targets
 
 (sources delimiter: _ @punctuation.delimiter.sources)
 (targets delimiter: _ @punctuation.delimiter.targets)
@@ -55,4 +55,4 @@
 
 (relation arrow: _ @operator.arrow)
 
-(relation label: _ @type.label)
+(relation label: _ @string.label)

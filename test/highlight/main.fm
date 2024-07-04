@@ -1,44 +1,44 @@
 Family (Fam)
-// ^ constant.builtin.family_name
-//      ^ constant.builtin.family_name.alias
+// ^ constant.family_name
+//      ^ constant.family_name.alias
 
 Name + ? =
 // ^ constant.name.ref
 //   ^ operator.sources.join
-//     ^ keyword.unknown
+//     ^ string.unknown
 //       ^ operator.arrow
 (Surname) Name (Alias)
-// ^ constant.builtin.family_name.ref
+// ^ constant.family_name.ref
 //        ^ constant.name.def
 //              ^ constant.name.def.alias
 (Surname) Name
-// ^ constant.builtin.family_name.ref
+// ^ constant.family_name.ref
 //        ^ constant.name.def
 girl?
-// ^ keyword.unknown
+// ^ string.unknown
 ?
-// <- keyword.unknown
+// <- string.unknown
 
 Name - word
 // ^ constant.name.ref
 //   ^ operator.arrow
-//     ^ type.label
+//     ^ string.label
 
 Name, Fam Name -> word Name and Name
 // ^ constant.name.ref
 //  ^ punctuation.delimiter.sources
-//    ^ constant.builtin.family_name.ref
+//    ^ constant.family_name.ref
 //        ^ constant.name.ref
 //             ^ operator.arrow
-//                ^ type.label
+//                ^ string.label
 //                     ^ constant.name.ref
 //                          ^ punctuation.delimiter.targets
 //                              ^ constant.name.ref
 
 Name + Name =
 1. Name
-// <- number.target_num
+// <- number.targets
 // ^ constant.name.def
 2) Name
-// <- number.target_num
+// <- number.targets
 // ^ constant.name.def

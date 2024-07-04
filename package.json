@@ -1,7 +1,7 @@
 {
   "name": "tree-sitter-familymarkup",
   "description": "Tree sitter for FamilyMarkup",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "main": "bindings/node",
   "types": "bindings/node",
   "scripts": {
@@ -11,7 +11,8 @@
     "gen": "tree-sitter generate",
     "build": "tree-sitter build",
     "gb": "tree-sitter generate && tree-sitter build",
-    "parse": "tree-sitter parse test/source.fm"
+    "parse": "tree-sitter parse test/source.fm",
+    "hg": "tree-sitter highlight test/source.fm"
   },
   "keywords": [
     "tree-sitter",
@@ -26,7 +27,7 @@
     "src/**"
   ],
   "author": "Sergii Kliuchnyk",
-  "license": "ISC",
+  "license": "BSD 4-Clause",
   "tree-sitter": [
     {
       "scope": "source.fm",
