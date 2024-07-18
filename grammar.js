@@ -77,10 +77,11 @@ module.exports = grammar({
 
     comment: _ => seq(choice('*', '/', '#'), optional(/[^\n]+/)),
 
+    name: _ => /\p{Lu}[\p{L}\-\d'"]*/u,
+    
     unknown: _ => choice('?', /\p{L}[\p{L}\-\d'"\s]*\?/u),
     num_unknown: $ => seq($.num, $.unknown),
 
-    name: _ => /\p{Lu}[\p{L}\-\d'"]*/u,
     words: _ => /\p{Ll}[\p{Ll}\s'"]*/u,
     _words: $ => alias($.words, '_words'),
 

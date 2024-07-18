@@ -607,6 +607,11 @@
         }
       ]
     },
+    "name": {
+      "type": "PATTERN",
+      "value": "\\p{Lu}[\\p{L}\\-\\d'\"]*",
+      "flags": "u"
+    },
     "unknown": {
       "type": "CHOICE",
       "members": [
@@ -633,11 +638,6 @@
           "name": "unknown"
         }
       ]
-    },
-    "name": {
-      "type": "PATTERN",
-      "value": "\\p{Lu}[\\p{L}\\-\\d'\"]*",
-      "flags": "u"
     },
     "words": {
       "type": "PATTERN",

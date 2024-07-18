@@ -1,7 +1,7 @@
 {
   "name": "tree-sitter-familymarkup",
   "description": "Tree sitter for FamilyMarkup",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "main": "bindings/node",
   "types": "bindings/node",
   "scripts": {
@@ -10,7 +10,7 @@
     "prebuildify": "prebuildify --napi --strip",
     "gen": "tree-sitter generate",
     "build": "tree-sitter build",
-    "gb": "tree-sitter generate && tree-sitter build",
+    "gb": "tree-sitter generate && tree-sitter build && rm -rf bindings/go",
     "parse": "tree-sitter parse test/source.fm",
     "hg": "tree-sitter highlight test/source.fm"
   },
