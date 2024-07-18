@@ -4,11 +4,11 @@ Simple list
 
 Family
 
-Name1 = Name2
+Name1 + Имя = Name2
 
-Name1 = Name2
+Name1 + імʼя? = Name2
 
-Family2
+Family2 (Fam, Famy2)
 
 Name1 = Name2
 
@@ -19,19 +19,28 @@ Name1 = Name2
     (family_name (name))
     (relations
       (relation
-        (sources (name_ref (name)))
+        (sources
+          (name_ref (name))
+          (name_ref (name))
+        )
         (targets
-          (name_def
-            (name))))
+          (name_def (name))
+        ))
 
       (relation
-        (sources (name_ref (name)))
+        (sources
+          (name_ref (name))
+          (unknown)
+        )
         (targets
-          (name_def
-            (name))))))
+          (name_def (name))
+        ))))
 
   (family
-    (family_name (name))
+    (family_name 
+      (name)
+      (name_aliases (name) (name))
+    )
     (relations
       (relation
         (sources (name_ref (name)))
