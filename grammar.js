@@ -82,7 +82,7 @@ module.exports = grammar({
     unknown: _ => choice('?', /\p{L}[\p{L}\-\d'"\s]*\?/u),
     num_unknown: $ => seq($.num, $.unknown),
 
-    words: _ => /\p{Ll}[\p{Ll}\s'"]*/u,
+    words: _ => /\p{Ll}([\p{Ll}'"\s]*[\p{Ll}'"])?/u,
     _words: $ => alias($.words, '_words'),
 
     _arrows: _ => choice('=', '<->', '->', '<-', '-'),

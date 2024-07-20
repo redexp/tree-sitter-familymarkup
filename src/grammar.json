@@ -641,7 +641,7 @@
     },
     "words": {
       "type": "PATTERN",
-      "value": "\\p{Ll}[\\p{Ll}\\s'\"]*",
+      "value": "\\p{Ll}([\\p{Ll}'\"\\s]*[\\p{Ll}'\"])?",
       "flags": "u"
     },
     "_words": {
