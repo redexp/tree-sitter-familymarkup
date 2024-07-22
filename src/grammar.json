@@ -271,6 +271,10 @@
             },
             {
               "type": "SYMBOL",
+              "name": "name"
+            },
+            {
+              "type": "SYMBOL",
               "name": "unknown"
             }
           ]
@@ -313,6 +317,10 @@
                       },
                       {
                         "type": "SYMBOL",
+                        "name": "name"
+                      },
+                      {
+                        "type": "SYMBOL",
                         "name": "unknown"
                       }
                     ]
@@ -335,15 +343,19 @@
           "members": [
             {
               "type": "SYMBOL",
+              "name": "name_ref"
+            },
+            {
+              "type": "SYMBOL",
               "name": "name_def"
             },
             {
               "type": "SYMBOL",
-              "name": "unknown"
+              "name": "num_unknown"
             },
             {
               "type": "SYMBOL",
-              "name": "num_unknown"
+              "name": "unknown"
             },
             {
               "type": "SYMBOL",
@@ -385,15 +397,19 @@
                     "members": [
                       {
                         "type": "SYMBOL",
+                        "name": "name_ref"
+                      },
+                      {
+                        "type": "SYMBOL",
                         "name": "name_def"
                       },
                       {
                         "type": "SYMBOL",
-                        "name": "unknown"
+                        "name": "num_unknown"
                       },
                       {
                         "type": "SYMBOL",
-                        "name": "num_unknown"
+                        "name": "unknown"
                       },
                       {
                         "type": "SYMBOL",
@@ -415,20 +431,17 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "name"
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "name"
+          },
+          "named": true,
+          "value": "surname"
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "name"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
+          "type": "SYMBOL",
+          "name": "name"
         }
       ]
     },

@@ -15,7 +15,7 @@ Name0 = Name1 (Name2)
       (name))
     (relations
       (relation
-        (sources (name_ref (name)))
+        (sources (name))
         (targets
           (name_def
             (name)
@@ -39,7 +39,7 @@ Name0 =
       (name))
     (relations
       (relation
-        (sources (name_ref (name)))
+        (sources (name))
       ))))
 
 
@@ -63,14 +63,14 @@ Name0 = Name1 (Name2, Name-3)
     )
     (relations
       (relation
-        (sources (name_ref (name)))
+        (sources (name))
         (targets
           (name_def
             (name)
             (name_aliases (name)))))
 
       (relation
-        (sources (name_ref (name)))
+        (sources (name))
         (targets
           (name_def
             (name)
@@ -97,7 +97,7 @@ Name, Name-Nam = Name1 (Nam-2, Nam), Name2 (Nam2)
     )
     (relations
       (relation
-        (sources (name_ref (name)) (name_ref (name)))
+        (sources (name) (name))
         (targets
           (name_def
             (name)
@@ -130,7 +130,7 @@ Name0 = Name1 (Name2)
       (name))
     (relations
       (relation
-        (sources (name_ref (name)))
+        (sources (name))
         (targets
           (name_def
             (name)
@@ -138,7 +138,7 @@ Name0 = Name1 (Name2)
               (name)))))
 
       (relation
-        (sources (name_ref (name)))
+        (sources (name))
         (targets
           (name_def
             (name)
@@ -151,7 +151,7 @@ Name0 = Name1 (Name2)
       (name))
     (relations
       (relation
-        (sources (name_ref (name)))
+        (sources (name))
         (targets
           (name_def
             (name)
@@ -181,7 +181,7 @@ Family
       (name))
     (relations
       (relation
-        (sources (name_ref (name)))
+        (sources (name))
         (targets
           (name_def
             (name)
@@ -189,7 +189,7 @@ Family
               (name)))))
 
       (relation
-        (sources (name_ref (name)))
+        (sources (name))
         (targets
           (name_def
             (name)
@@ -213,28 +213,12 @@ Family
 
 Name0 and Name - word
 
----------
-
-(root
-  (family
-    (family_name (name))
-    (relations
-      (relation
-        (sources (name_ref (name)) (name_ref (name)))
-        (words)
-      )
-    )
-  )
-)
-
-========
-relations with words as join + Name
-========
-
-Family
-
 Name0 and Name - Name and Name
 
+Name0 and Name - word Name and Name
+
+Name0 and Name - word Fam Name and Name
+
 ---------
 
 (root
@@ -242,9 +226,29 @@ Name0 and Name - Name and Name
     (family_name (name))
     (relations
       (relation
-        (sources (name_ref (name)) (name_ref (name)))
+        (sources (name) (name))
+        (words)
+      )
+      (relation
+        (sources (name) (name))
         (targets
           (name_def (name))
+          (name_def (name))
+        )
+      )
+      (relation
+        (sources (name) (name))
+        (words)
+        (targets
+          (name_def (name))
+          (name_def (name))
+        )
+      )
+      (relation
+        (sources (name) (name))
+        (words)
+        (targets
+          (name_ref (surname) (name))
           (name_def (name))
         )
       )
@@ -285,7 +289,7 @@ Name + Name Fam =
     (relations
       (relation
         (sources
-          (name_ref (name))
+          (name)
           (unknown)
         )
         (targets
@@ -296,7 +300,7 @@ Name + Name Fam =
         )
       )
       (relation
-        (sources (name_ref (name)) (name_ref (name)))
+        (sources (name) (name))
         (words)
         (targets
           (name_def (name))
@@ -308,7 +312,7 @@ Name + Name Fam =
         )
       )
       (relation
-        (sources (name_ref (name)))
+        (sources (name))
         (words)
         (targets
           (name_def (name))
@@ -323,8 +327,8 @@ Name + Name Fam =
     (relations
       (relation
         (sources
-          (name_ref (name))
-          (name_ref (name) (name))
+          (name)
+          (name_ref (surname) (name))
         )
         (targets
           (name_def (num) (name))
@@ -357,7 +361,7 @@ Name
     (relations
       (relation
         (sources
-          (name_ref (name))
+          (name)
           (unknown)
         )
         (targets
@@ -407,7 +411,7 @@ Fam
     (relations
       (relation
         (sources
-          (name_ref (name))
+          (name)
           (unknown)
         )
         (targets

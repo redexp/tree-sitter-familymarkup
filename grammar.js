@@ -43,15 +43,15 @@ module.exports = grammar({
     ),
 
     sources: $ => repeatWith(
-      choice($.name_ref, $.unknown),
+      choice($.name_ref, $.name, $.unknown),
       field('delimiter', choice('+', ',', $._words))
     ),
     targets: $ => repeatWith(
-      choice($.name_def, $.unknown, $.num_unknown, $.comment),
+      choice($.name_ref, $.name_def, $.num_unknown, $.unknown, $.comment),
       field('delimiter', choice(',', $._nl, $._words))
     ),
 
-    name_ref: $ => seq($.name, optional($.name)),
+    name_ref: $ => seq(alias($.name, $.surname), $.name),
 
     family_name: $ => seq(
       $.name,

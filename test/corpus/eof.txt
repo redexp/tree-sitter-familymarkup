@@ -36,7 +36,7 @@ Name = Name
       (name))
     (relations
       (relation
-        (sources (name_ref (name)))
+        (sources (name))
         (targets
           (name_def
             (name)))))))
@@ -59,7 +59,7 @@ Family
       (name))
     (relations
       (relation
-        (sources (name_ref (name)))
+        (sources (name))
         (targets
           (name_def
             (name))))))

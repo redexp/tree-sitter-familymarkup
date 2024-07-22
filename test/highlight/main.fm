@@ -14,6 +14,8 @@ Name + ? =
 (Surname) Name
 // ^ constant.family_name.ref
 //        ^ constant.name.def
+Name
+// <- constant.name.def
 girl?
 // ^ string.unknown
 ?
@@ -24,7 +26,7 @@ Name - word
 //   ^ operator.arrow
 //     ^ string.label
 
-Name, Fam Name -> word Name and Name
+Name, Fam Name -> word Name and Fam Name
 // ^ constant.name.ref
 //  ^ punctuation.delimiter.sources
 //    ^ constant.family_name.ref
@@ -33,7 +35,8 @@ Name, Fam Name -> word Name and Name
 //                ^ string.label
 //                     ^ constant.name.ref
 //                          ^ punctuation.delimiter.targets
-//                              ^ constant.name.ref
+//                              ^ constant.family_name.ref
+//                                   ^ constant.name.ref
 
 Name + Name =
 1. Name

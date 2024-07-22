@@ -99,6 +99,10 @@
         {
           "type": "name",
           "named": true
+        },
+        {
+          "type": "surname",
+          "named": true
         }
       ]
     }
@@ -251,6 +255,10 @@
       "required": true,
       "types": [
         {
+          "type": "name",
+          "named": true
+        },
+        {
           "type": "name_ref",
           "named": true
         },
@@ -290,6 +298,10 @@
         },
         {
           "type": "name_def",
+          "named": true
+        },
+        {
+          "type": "name_ref",
           "named": true
         },
         {
@@ -370,6 +382,10 @@
   },
   {
     "type": "num",
+    "named": true
+  },
+  {
+    "type": "surname",
     "named": true
   },
   {

@@ -20,8 +20,8 @@ Name1 = Name2
     (relations
       (relation
         (sources
-          (name_ref (name))
-          (name_ref (name))
+          (name)
+          (name)
         )
         (targets
           (name_def (name))
@@ -29,7 +29,7 @@ Name1 = Name2
 
       (relation
         (sources
-          (name_ref (name))
+          (name)
           (unknown)
         )
         (targets
@@ -43,7 +43,7 @@ Name1 = Name2
     )
     (relations
       (relation
-        (sources (name_ref (name)))
+        (sources (name))
         (targets
           (name_def
             (name)))))))
