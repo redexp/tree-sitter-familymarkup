@@ -7,17 +7,24 @@
   {
     "type": "family",
     "named": true,
-    "fields": {},
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "family_name",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "comment",
-          "named": true
-        },
-        {
-          "type": "family_name",
           "named": true
         },
         {
@@ -30,20 +37,27 @@
   {
     "type": "family_name",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "name",
-          "named": true
-        },
-        {
-          "type": "name_aliases",
-          "named": true
-        }
-      ]
+    "fields": {
+      "aliases": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "name_aliases",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -64,28 +78,47 @@
   {
     "type": "name_def",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "name",
-          "named": true
-        },
-        {
-          "type": "name_aliases",
-          "named": true
-        },
-        {
-          "type": "new_surname",
-          "named": true
-        },
-        {
-          "type": "num",
-          "named": true
-        }
-      ]
+    "fields": {
+      "aliases": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "name_aliases",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      },
+      "number": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "num",
+            "named": true
+          }
+        ]
+      },
+      "surname": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "new_surname",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -180,21 +213,27 @@
             "named": true
           }
         ]
+      },
+      "sources": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "sources",
+            "named": true
+          }
+        ]
+      },
+      "targets": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "targets",
+            "named": true
+          }
+        ]
       }
-    },
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "sources",
-          "named": true
-        },
-        {
-          "type": "targets",
-          "named": true
-        }
-      ]
     }
   },
   {

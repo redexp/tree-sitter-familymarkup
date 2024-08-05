@@ -1,7 +1,7 @@
 {
   "name": "tree-sitter-familymarkup",
   "description": "Tree sitter for FamilyMarkup",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "main": "bindings/node",
   "types": "bindings/node",
   "scripts": {

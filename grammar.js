@@ -21,7 +21,7 @@ module.exports = grammar({
     _nl: _ => /\r?\n/,
 
 		family: $ => seq(
-      $.family_name,
+      field('name', $.family_name),
       optional(seq(
         $._nl,
         repeatWith($.comment, $._nl)
@@ -35,11 +35,11 @@ module.exports = grammar({
     relations: $ => repeatWith($.relation, $._multi_newline),
 
     relation: $ => seq(
-      $.sources,
+      field('sources', $.sources),
       field('arrow', $._arrows),
       field('label', optional($.words)),
       optional($._nl),
-      optional($.targets),
+      field('targets', optional($.targets)),
     ),
 
     sources: $ => repeatWith(
@@ -54,15 +54,15 @@ module.exports = grammar({
     name_ref: $ => seq(alias($.name, $.surname), $.name),
 
     family_name: $ => seq(
-      $.name,
-      optional($.name_aliases)
+      field('name', $.name),
+      field('aliases', optional($.name_aliases)),
     ),
 
     name_def: $ => seq(
-      optional($.num),
-      optional($.new_surname),
-      $.name,
-      optional($.name_aliases)
+      field('number', optional($.num)),
+      field('surname', optional($.new_surname)),
+      field('name', $.name),
+      field('aliases', optional($.name_aliases)),
     ),
 
     num: _ => /\d+[.)]?/,
