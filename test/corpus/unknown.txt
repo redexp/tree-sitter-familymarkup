@@ -1,0 +1,46 @@
+=========
+? + ?
+=========
+
+Fam
+
+? + ? =
+Name
+
+Fam2
+
+? + ? =
+Name
+
+---------
+
+(root
+  (family
+    (family_name (name))
+    (relations
+      (relation
+        (sources
+          (unknown)
+          (unknown)
+        )
+        (targets
+          (name_def (name))
+        )
+      )
+    )
+  )
+  (family
+    (family_name (name))
+    (relations
+      (relation
+        (sources
+          (unknown)
+          (unknown)
+        )
+        (targets
+          (name_def (name))
+        )
+      )
+    )
+  )
+)
