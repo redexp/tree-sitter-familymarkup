@@ -2,7 +2,6 @@ package familymarkup_test
 
 import (
 	"context"
-	"fmt"
 	"testing"
 
 	syntax "github.com/redexp/tree-sitter-familymarkup"
