@@ -3,7 +3,6 @@ package familymarkup
 import (
 	"bytes"
 	_ "embed"
-	"strings"
 
 	binding "github.com/redexp/tree-sitter-familymarkup/src"
 	sitter "github.com/smacker/go-tree-sitter"
