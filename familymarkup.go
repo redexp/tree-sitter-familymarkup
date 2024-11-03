@@ -25,12 +25,18 @@ func GetHighlightQueryLastNameFirst() (*sitter.Query, error) {
 		[]byte(`
 (name_ref
   (surname) @constant.family_name.ref
+)
+
+(name_ref
   (name) @constant.name.ref
 )`),
 		[]byte(`
 (name_ref
-  (surname) @constant.name.ref
   (name) @constant.family_name.ref
+)
+
+(name_ref
+  (surname) @constant.name.ref
 )`),
 		1,
 	)

@@ -31,8 +31,9 @@ func TestGetHighlightQuery(t *testing.T) {
 	src := []byte(`
 Family
 
-Name1 + Name? =
+Name1 + Surname Name =
 Name2
+Name?
 `)
 
 	tree, _ := sitter.ParseCtx(context.Background(), src, lang)
@@ -61,11 +62,7 @@ Name2
 		t.Errorf("legend is nil")
 	}
 
-	captures, err := getHighlightCaptures(tree)
-
-	if err != nil {
-		t.Errorf("GetHighlightCaptures: %v", err)
-	}
+	captures := getHighlightCaptures(tree, query)
 
 	if captures == nil {
 		t.Errorf("captures is nil")
@@ -75,9 +72,11 @@ Name2
 		{"constant.family_name", "Family"},
 		{"constant.name.ref", "Name1"},
 		{"operator.sources.join", "+"},
-		{"string.unknown", "Name?"},
+		{"constant.family_name.ref", "Surname"},
+		{"constant.name.ref", "Name"},
 		{"operator.arrow", "="},
 		{"constant.name.def", "Name2"},
+		{"string.unknown", "Name?"},
 	}
 
 	if len(captures) != len(compare) {
@@ -97,13 +96,7 @@ Name2
 	}
 }
 
-func getHighlightCaptures(tree *sitter.Node) ([]*sitter.QueryCapture, error) {
-	query, err := syntax.GetHighlightQuery()
-
-	if err != nil {
-		return nil, err
-	}
-
+func getHighlightCaptures(tree *sitter.Node, query *sitter.Query) []*sitter.QueryCapture {
 	cursor := sitter.NewQueryCursor()
 	cursor.Exec(query, tree)
 
@@ -130,5 +123,5 @@ func getHighlightCaptures(tree *sitter.Node) ([]*sitter.QueryCapture, error) {
 		}
 	}
 
-	return list, nil
+	return list
 }
