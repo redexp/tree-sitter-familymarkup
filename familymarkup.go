@@ -1,7 +1,9 @@
 package familymarkup
 
 import (
+	"bytes"
 	_ "embed"
+	"strings"
 
 	binding "github.com/redexp/tree-sitter-familymarkup/src"
 	sitter "github.com/smacker/go-tree-sitter"
@@ -16,6 +18,25 @@ func GetLanguage() *sitter.Language {
 
 func GetHighlightQuery() (*sitter.Query, error) {
 	return sitter.NewQuery(highlightQuery, GetLanguage())
+}
+
+func GetHighlightQueryLastNameFirst() (*sitter.Query, error) {
+	lastNameFirst := bytes.Replace(
+		highlightQuery,
+		[]byte(`
+(name_ref
+  (surname) @constant.family_name.ref
+  (name) @constant.name.ref
+)`),
+		[]byte(`
+(name_ref
+  (surname) @constant.name.ref
+  (name) @constant.family_name.ref
+)`),
+		1,
+	)
+
+	return sitter.NewQuery(lastNameFirst, GetLanguage())
 }
 
 func GetHighlightLegend() ([]string, error) {
