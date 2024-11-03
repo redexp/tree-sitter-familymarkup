@@ -25,6 +25,8 @@ func GetHighlightLegend() ([]string, error) {
 		return nil, err
 	}
 
+	defer query.Close()
+
 	count := query.CaptureCount()
 
 	legend := make([]string, count)
@@ -42,6 +44,8 @@ func GetHighlightCaptures(tree *sitter.Node) ([]*sitter.QueryCapture, error) {
 	if err != nil {
 		return nil, err
 	}
+
+	defer query.Close()
 
 	cursor := sitter.NewQueryCursor()
 	cursor.Exec(query, tree)
