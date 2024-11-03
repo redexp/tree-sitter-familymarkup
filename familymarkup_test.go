@@ -61,7 +61,7 @@ Name2
 		t.Errorf("legend is nil")
 	}
 
-	captures, err := syntax.GetHighlightCaptures(tree)
+	captures, err := getHighlightCaptures(tree)
 
 	if err != nil {
 		t.Errorf("GetHighlightCaptures: %v", err)
@@ -72,10 +72,10 @@ Name2
 	}
 
 	compare := [][2]string{
-		{"constant.builtin.family_name", "Family"},
+		{"constant.family_name", "Family"},
 		{"constant.name.ref", "Name1"},
 		{"operator.sources.join", "+"},
-		{"keyword.unknown", "Name?"},
+		{"string.unknown", "Name?"},
 		{"operator.arrow", "="},
 		{"constant.name.def", "Name2"},
 	}
@@ -95,4 +95,40 @@ Name2
 			t.Errorf("capture %d invalid node %s expect %s", i, cap.Node.Content(src), pair[1])
 		}
 	}
+}
+
+func getHighlightCaptures(tree *sitter.Node) ([]*sitter.QueryCapture, error) {
+	query, err := syntax.GetHighlightQuery()
+
+	if err != nil {
+		return nil, err
+	}
+
+	cursor := sitter.NewQueryCursor()
+	cursor.Exec(query, tree)
+
+	list := make([]*sitter.QueryCapture, 0)
+	var prev *sitter.QueryCapture
+
+	for {
+		match, ok := cursor.NextMatch()
+
+		if !ok {
+			break
+		}
+
+		for _, cap := range match.Captures {
+			if prev != nil && prev.Node.Equal(cap.Node) {
+				if cap.Index > prev.Index {
+					list[len(list)-1] = &cap
+				}
+			} else {
+				list = append(list, &cap)
+			}
+
+			prev = &cap
+		}
+	}
+
+	return list, nil
 }
