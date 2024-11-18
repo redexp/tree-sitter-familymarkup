@@ -1,0 +1,47 @@
+Family (Fam)
+// ^ class.declaration.family_name
+//      ^ class.declaration.family_name.alias
+
+Name + ? =
+// ^ property.static.name.ref
+//   ^ operator.sources.join
+//     ^ string.unknown
+//       ^ operator.arrow
+(Surname) Name (Alias)
+// ^ class.family_name.ref
+//        ^ property.declaration.static.name.def
+//              ^ property.declaration.static.name.def.alias
+(Surname) Name
+// ^ class.family_name.ref
+//        ^ property.declaration.static.name.def
+Name
+// <- property.declaration.static.name.def
+girl?
+// ^ string.unknown
+?
+// <- string.unknown
+
+Name - word
+// ^ property.static.name.ref
+//   ^ operator.arrow
+//     ^ string.label
+
+Name, Fam Name -> word Name and Fam Name
+// ^ property.static.name.ref
+//  ^ punctuation.delimiter.sources
+//    ^ class.family_name.ref
+//        ^ property.static.name.ref
+//             ^ operator.arrow
+//                ^ string.label
+//                     ^ property.static.name.ref
+//                          ^ punctuation.delimiter.targets
+//                              ^ class.family_name.ref
+//                                   ^ property.static.name.ref
+
+Name + Name =
+1. Name
+// <- number.targets
+// ^ property.declaration.static.name.def
+2) Name
+// <- number.targets
+// ^ property.declaration.static.name.def

@@ -1,7 +1,7 @@
 {
   "name": "tree-sitter-familymarkup",
   "description": "Tree sitter for FamilyMarkup",
-  "version": "1.7.1",
+  "version": "1.8.0",
   "main": "bindings/node",
   "types": "bindings/node",
   "scripts": {
@@ -25,15 +25,10 @@
   ],
   "author": "Sergii Kliuchnyk",
   "license": "BSD 4-Clause",
-  "tree-sitter": [
-    {
-      "scope": "source.fm",
-      "file-types": [
-        "fm"
-      ],
-      "highlights": "queries/highlights.scm"
-    }
-  ],
+  "devDependencies": {
+    "prebuildify": "^6.0.0",
+    "tree-sitter-cli": "^0.24.4"
+  },
   "dependencies": {
     "node-addon-api": "^7.1.0",
     "node-gyp-build": "^4.8.0"
@@ -45,9 +40,5 @@
     "tree_sitter": {
       "optional": true
     }
-  },
-  "devDependencies": {
-    "prebuildify": "^6.0.0",
-    "tree-sitter-cli": "^0.23.0"
   }
 }

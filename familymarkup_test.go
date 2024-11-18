@@ -69,13 +69,13 @@ Name?
 	}
 
 	compare := [][2]string{
-		{"constant.family_name", "Family"},
-		{"constant.name.ref", "Name1"},
+		{"class.declaration.family_name", "Family"},
+		{"property.static.name.ref", "Name1"},
 		{"operator.sources.join", "+"},
-		{"constant.family_name.ref", "Surname"},
-		{"constant.name.ref", "Name"},
+		{"class.family_name.ref", "Surname"},
+		{"property.static.name.ref", "Name"},
 		{"operator.arrow", "="},
-		{"constant.name.def", "Name2"},
+		{"property.declaration.static.name.def", "Name2"},
 		{"string.unknown", "Name?"},
 	}
 
