@@ -19,31 +19,6 @@ func GetHighlightQuery() (*sitter.Query, error) {
 	return sitter.NewQuery(highlightQuery, GetLanguage())
 }
 
-func GetHighlightQueryLastNameFirst() (*sitter.Query, error) {
-	lastNameFirst := bytes.Replace(
-		highlightQuery,
-		[]byte(`
-(name_ref
-  (surname) @class.family_name.ref
-)
-
-(name_ref
-  (name) @property.static.name.ref
-)`),
-		[]byte(`
-(name_ref
-  (name) @class.family_name.ref
-)
-
-(name_ref
-  (surname) @property.static.name.ref
-)`),
-		1,
-	)
-
-	return sitter.NewQuery(lastNameFirst, GetLanguage())
-}
-
 func GetHighlightLegend() ([]string, error) {
 	query, err := GetHighlightQuery()
 

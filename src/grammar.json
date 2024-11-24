@@ -444,6 +444,10 @@
       "type": "SEQ",
       "members": [
         {
+          "type": "SYMBOL",
+          "name": "name"
+        },
+        {
           "type": "ALIAS",
           "content": {
             "type": "SYMBOL",
@@ -451,10 +455,6 @@
           },
           "named": true,
           "value": "surname"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "name"
         }
       ]
     },

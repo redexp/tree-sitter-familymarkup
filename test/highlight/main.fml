@@ -29,14 +29,14 @@ Name - word
 Name, Fam Name -> word Name and Fam Name
 // ^ property.static.name.ref
 //  ^ punctuation.delimiter.sources
-//    ^ class.family_name.ref
-//        ^ property.static.name.ref
+//    ^ property.static.name.ref
+//        ^ class.family_name.ref
 //             ^ operator.arrow
 //                ^ string.label
 //                     ^ property.static.name.ref
 //                          ^ punctuation.delimiter.targets
-//                              ^ class.family_name.ref
-//                                   ^ property.static.name.ref
+//                              ^ property.static.name.ref
+//                                   ^ class.family_name.ref
 
 Name + Name =
 1. Name

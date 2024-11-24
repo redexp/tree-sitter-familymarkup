@@ -18,7 +18,7 @@ Fam Name + Name = Name (Name-Nam, Name-2, NamNam)
     (relations
       (relation
         (sources
-          (name_ref (surname) (name))
+          (name_ref (name) (surname))
           (name)
         )
         (targets
@@ -47,7 +47,7 @@ non ascii letters
       (relation
         (sources
           (name)
-          (name_ref (surname) (name))
+          (name_ref (name) (surname))
         )
         (targets
           (name_def

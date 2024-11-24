@@ -248,7 +248,7 @@ Name0 and Name - word Fam Name and Name
         (sources (name) (name))
         (words)
         (targets
-          (name_ref (surname) (name))
+          (name_ref (name) (surname))
           (name_def (name))
         )
       )
@@ -328,7 +328,7 @@ Name + Name Fam =
       (relation
         (sources
           (name)
-          (name_ref (surname) (name))
+          (name_ref (name) (surname))
         )
         (targets
           (name_def (num) (name))

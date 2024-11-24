@@ -51,7 +51,7 @@ module.exports = grammar({
       field('delimiter', choice(',', $._nl, $._words))
     ),
 
-    name_ref: $ => seq(alias($.name, $.surname), $.name),
+    name_ref: $ => seq($.name, alias($.name, $.surname)),
 
     family_name: $ => seq(
       field('name', $.name),
@@ -78,7 +78,7 @@ module.exports = grammar({
     comment: _ => seq(choice('*', '/', '#'), optional(/[^\n]+/)),
 
     name: _ => /\p{Lu}[\p{L}\-\d'"]*/u,
-    
+
     unknown: _ => choice('?', /\p{L}[\p{L}\-\d'" ]*\?/u),
     num_unknown: $ => seq($.num, $.unknown),
 
