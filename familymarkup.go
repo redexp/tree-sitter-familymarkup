@@ -1,7 +1,6 @@
 package familymarkup
 
 import (
-	"bytes"
 	_ "embed"
 
 	binding "github.com/redexp/tree-sitter-familymarkup/src"
