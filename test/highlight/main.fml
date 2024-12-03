@@ -16,6 +16,9 @@ Name + ? =
 //        ^ property.declaration.static.name.def
 Name
 // <- property.declaration.static.name.def
+Name Surname
+// <- property.declaration.static.name.def
+//   ^ class.family_name.ref
 girl?
 // ^ string.unknown
 ?
@@ -45,3 +48,7 @@ Name + Name =
 2) Name
 // <- number.targets
 // ^ property.declaration.static.name.def
+3. Name Surname
+// <- number.targets
+// ^ property.declaration.static.name.def
+//      ^ class.family_name.ref

@@ -110,11 +110,15 @@
         ]
       },
       "surname": {
-        "multiple": false,
+        "multiple": true,
         "required": false,
         "types": [
           {
             "type": "new_surname",
+            "named": true
+          },
+          {
+            "type": "surname",
             "named": true
           }
         ]
@@ -338,10 +342,6 @@
         },
         {
           "type": "name_def",
-          "named": true
-        },
-        {
-          "type": "name_ref",
           "named": true
         },
         {

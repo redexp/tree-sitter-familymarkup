@@ -356,10 +356,6 @@
           "members": [
             {
               "type": "SYMBOL",
-              "name": "name_ref"
-            },
-            {
-              "type": "SYMBOL",
               "name": "name_def"
             },
             {
@@ -408,10 +404,6 @@
                   {
                     "type": "CHOICE",
                     "members": [
-                      {
-                        "type": "SYMBOL",
-                        "name": "name_ref"
-                      },
                       {
                         "type": "SYMBOL",
                         "name": "name_def"
@@ -539,6 +531,27 @@
               {
                 "type": "SYMBOL",
                 "name": "name_aliases"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "surname",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "ALIAS",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "name"
+                },
+                "named": true,
+                "value": "surname"
               },
               {
                 "type": "BLANK"

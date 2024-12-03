@@ -47,7 +47,7 @@ module.exports = grammar({
       field('delimiter', choice('+', ',', $._words))
     ),
     targets: $ => repeatWith(
-      choice($.name_ref, $.name_def, $.num_unknown, $.unknown, $.comment),
+      choice($.name_def, $.num_unknown, $.unknown, $.comment),
       field('delimiter', choice(',', $._nl, $._words))
     ),
 
@@ -63,6 +63,7 @@ module.exports = grammar({
       field('surname', optional($.new_surname)),
       field('name', $.name),
       field('aliases', optional($.name_aliases)),
+      field('surname', optional(alias($.name, $.surname))),
     ),
 
     num: _ => /\d+[.)]?/,

@@ -248,7 +248,7 @@ Name0 and Name - word Fam Name and Name
         (sources (name) (name))
         (words)
         (targets
-          (name_ref (name) (surname))
+          (name_def (name) (surname))
           (name_def (name))
         )
       )
