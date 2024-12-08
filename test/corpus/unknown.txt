@@ -23,6 +23,7 @@ Name
           (unknown)
           (unknown)
         )
+        (eq)
         (targets
           (name_def (name))
         )
@@ -37,6 +38,7 @@ Name
           (unknown)
           (unknown)
         )
+        (eq)
         (targets
           (name_def (name))
         )

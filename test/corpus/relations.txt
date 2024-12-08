@@ -16,6 +16,7 @@ Name0 = Name1 (Name2)
     (relations
       (relation
         (sources (name))
+        (eq)
         (targets
           (name_def
             (name)
@@ -40,6 +41,7 @@ Name0 =
     (relations
       (relation
         (sources (name))
+        (eq)
       ))))
 
 
@@ -64,6 +66,7 @@ Name0 = Name1 (Name2, Name-3)
     (relations
       (relation
         (sources (name))
+        (eq)
         (targets
           (name_def
             (name)
@@ -71,6 +74,7 @@ Name0 = Name1 (Name2, Name-3)
 
       (relation
         (sources (name))
+        (eq)
         (targets
           (name_def
             (name)
@@ -98,6 +102,7 @@ Name, Name-Nam = Name1 (Nam-2, Nam), Name2 (Nam2)
     (relations
       (relation
         (sources (name) (name))
+        (eq)
         (targets
           (name_def
             (name)
@@ -131,6 +136,7 @@ Name0 = Name1 (Name2)
     (relations
       (relation
         (sources (name))
+        (eq)
         (targets
           (name_def
             (name)
@@ -139,6 +145,7 @@ Name0 = Name1 (Name2)
 
       (relation
         (sources (name))
+        (eq)
         (targets
           (name_def
             (name)
@@ -152,6 +159,7 @@ Name0 = Name1 (Name2)
     (relations
       (relation
         (sources (name))
+        (eq)
         (targets
           (name_def
             (name)
@@ -182,6 +190,7 @@ Family
     (relations
       (relation
         (sources (name))
+        (eq)
         (targets
           (name_def
             (name)
@@ -190,6 +199,7 @@ Family
 
       (relation
         (sources (name))
+        (eq)
         (targets
           (name_def
             (name)
@@ -227,10 +237,12 @@ Name0 and Name - word Fam Name and Name
     (relations
       (relation
         (sources (name) (name))
+        (arrow)
         (words)
       )
       (relation
         (sources (name) (name))
+        (arrow)
         (targets
           (name_def (name))
           (name_def (name))
@@ -238,6 +250,7 @@ Name0 and Name - word Fam Name and Name
       )
       (relation
         (sources (name) (name))
+        (arrow)
         (words)
         (targets
           (name_def (name))
@@ -246,6 +259,7 @@ Name0 and Name - word Fam Name and Name
       )
       (relation
         (sources (name) (name))
+        (arrow)
         (words)
         (targets
           (name_def (name) (surname))
@@ -292,6 +306,7 @@ Name + Name Fam =
           (name)
           (unknown)
         )
+        (eq)
         (targets
           (name_def
             (name)
@@ -301,6 +316,7 @@ Name + Name Fam =
       )
       (relation
         (sources (name) (name))
+        (eq)
         (words)
         (targets
           (name_def (name))
@@ -313,6 +329,7 @@ Name + Name Fam =
       )
       (relation
         (sources (name))
+        (arrow)
         (words)
         (targets
           (name_def (name))
@@ -330,6 +347,7 @@ Name + Name Fam =
           (name)
           (name_ref (name) (surname))
         )
+        (eq)
         (targets
           (name_def (num) (name))
           (name_def (num) (new_surname (name)) (name))
@@ -364,6 +382,7 @@ Name
           (name)
           (unknown)
         )
+        (eq)
         (targets
           (name_def
             (new_surname (name))
@@ -414,6 +433,7 @@ Fam
           (name)
           (unknown)
         )
+        (eq)
         (targets
           (name_def
             (new_surname (name))

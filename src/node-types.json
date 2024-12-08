@@ -1,5 +1,10 @@
 [
   {
+    "type": "arrow",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "comment",
     "named": true,
     "fields": {}
@@ -187,24 +192,12 @@
         "required": true,
         "types": [
           {
-            "type": "-",
-            "named": false
+            "type": "arrow",
+            "named": true
           },
           {
-            "type": "->",
-            "named": false
-          },
-          {
-            "type": "<-",
-            "named": false
-          },
-          {
-            "type": "<->",
-            "named": false
-          },
-          {
-            "type": "=",
-            "named": false
+            "type": "eq",
+            "named": true
           }
         ]
       },
@@ -405,16 +398,16 @@
     "named": false
   },
   {
-    "type": "=",
-    "named": false
-  },
-  {
     "type": "?",
     "named": false
   },
   {
     "type": "_words",
     "named": false
+  },
+  {
+    "type": "eq",
+    "named": true
   },
   {
     "type": "name",

@@ -21,6 +21,7 @@ Fam Name + Name = Name (Name-Nam, Name-2, NamNam)
           (name_ref (name) (surname))
           (name)
         )
+        (eq)
         (targets
           (name_def
             (name)
@@ -49,6 +50,7 @@ non ascii letters
           (name)
           (name_ref (name) (surname))
         )
+        (eq)
         (targets
           (name_def
             (new_surname (name))

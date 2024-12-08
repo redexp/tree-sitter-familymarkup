@@ -222,8 +222,17 @@
           "type": "FIELD",
           "name": "arrow",
           "content": {
-            "type": "SYMBOL",
-            "name": "_arrows"
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "eq"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "arrow"
+              }
+            ]
           }
         },
         {
@@ -716,13 +725,13 @@
       "named": false,
       "value": "_words"
     },
-    "_arrows": {
+    "eq": {
+      "type": "STRING",
+      "value": "="
+    },
+    "arrow": {
       "type": "CHOICE",
       "members": [
-        {
-          "type": "STRING",
-          "value": "="
-        },
         {
           "type": "STRING",
           "value": "<->"

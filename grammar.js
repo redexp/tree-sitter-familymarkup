@@ -36,7 +36,7 @@ module.exports = grammar({
 
     relation: $ => seq(
       field('sources', $.sources),
-      field('arrow', $._arrows),
+      field('arrow', choice($.eq, $.arrow)),
       field('label', optional($.words)),
       optional($._nl),
       field('targets', optional($.targets)),
@@ -86,7 +86,9 @@ module.exports = grammar({
     words: _ => /\p{Ll}([\p{Ll}'"\s]*[\p{Ll}'"])?/u,
     _words: $ => alias($.words, '_words'),
 
-    _arrows: _ => choice('=', '<->', '->', '<-', '-'),
+    eq: _ => "=",
+
+    arrow: _ => choice('<->', '->', '<-', '-'),
   },
 });
 

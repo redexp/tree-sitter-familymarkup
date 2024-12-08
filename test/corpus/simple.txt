@@ -23,6 +23,7 @@ Name1 = Name2
           (name)
           (name)
         )
+        (eq)
         (targets
           (name_def (name))
         ))
@@ -32,6 +33,7 @@ Name1 = Name2
           (name)
           (unknown)
         )
+        (eq)
         (targets
           (name_def (name))
         ))))
@@ -44,6 +46,7 @@ Name1 = Name2
     (relations
       (relation
         (sources (name))
+        (eq)
         (targets
           (name_def
             (name)))))))
