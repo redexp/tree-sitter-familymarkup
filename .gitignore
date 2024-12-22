@@ -4,9 +4,6 @@ build
 .build
 target
 
-# see go bindings in src
-bindings/go
-
 # C artifacts
 *.a
 *.so

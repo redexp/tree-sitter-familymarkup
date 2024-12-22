@@ -1,11 +1,10 @@
 package familymarkup_test
 
 import (
-	"context"
 	"testing"
 
 	syntax "github.com/redexp/tree-sitter-familymarkup"
-	sitter "github.com/smacker/go-tree-sitter"
+	sitter "github.com/tree-sitter/go-tree-sitter"
 )
 
 func TestGetLanguage(t *testing.T) {
@@ -13,11 +12,7 @@ func TestGetLanguage(t *testing.T) {
 	parser := sitter.NewParser()
 	parser.SetLanguage(lang)
 
-	input := []byte("Family")
-	tree, err := sitter.ParseCtx(context.Background(), input, lang)
-	if err != nil {
-		t.Errorf("error parsing input: %v", err)
-	}
+	tree := parser.Parse([]byte("Family"), nil)
 	if tree == nil {
 		t.Errorf("tree is nil")
 	}
@@ -31,12 +26,12 @@ func TestGetHighlightQuery(t *testing.T) {
 	src := []byte(`
 Family
 
-Name1 + Surname Name =
+Name1 + Name Surname =
 Name2
 Name?
 `)
 
-	tree, _ := sitter.ParseCtx(context.Background(), src, lang)
+	tree := parser.Parse(src, nil)
 
 	if tree == nil {
 		t.Errorf("tree is nil")
@@ -52,9 +47,9 @@ Name?
 		t.Errorf("query is nil")
 	}
 
-	legend, err := syntax.GetHighlightLegend()
+	legend, qerr := syntax.GetHighlightLegend()
 
-	if err != nil {
+	if qerr != nil {
 		t.Errorf("GetHighlightLegend: %v", err)
 	}
 
@@ -62,18 +57,14 @@ Name?
 		t.Errorf("legend is nil")
 	}
 
-	captures := getHighlightCaptures(tree, query)
-
-	if captures == nil {
-		t.Errorf("captures is nil")
-	}
+	captures := getHighlightCaptures(tree.RootNode(), query, src)
 
 	compare := [][2]string{
 		{"class.declaration.family_name", "Family"},
 		{"property.static.name.ref", "Name1"},
 		{"operator.sources.join", "+"},
-		{"class.family_name.ref", "Surname"},
 		{"property.static.name.ref", "Name"},
+		{"class.family_name.ref", "Surname"},
 		{"operator.arrow", "="},
 		{"property.declaration.static.name.def", "Name2"},
 		{"string.unknown", "Name?"},
@@ -90,37 +81,33 @@ Name?
 			t.Errorf("capture %d invalid type %s should be %s", i, legend[captures[i].Index], pair[0])
 		}
 
-		if cap.Node.Content(src) != pair[1] {
-			t.Errorf("capture %d invalid node %s expect %s", i, cap.Node.Content(src), pair[1])
+		if cap.Node.Utf8Text(src) != pair[1] {
+			t.Errorf("capture %d invalid node %s expect %s", i, cap.Node.Utf8Text(src), pair[1])
 		}
 	}
 }
 
-func getHighlightCaptures(tree *sitter.Node, query *sitter.Query) []*sitter.QueryCapture {
+func getHighlightCaptures(root *sitter.Node, query *sitter.Query, text []byte) []*sitter.QueryCapture {
 	cursor := sitter.NewQueryCursor()
-	cursor.Exec(query, tree)
+	defer cursor.Close()
 
 	list := make([]*sitter.QueryCapture, 0)
 	var prev *sitter.QueryCapture
 
-	for {
-		match, ok := cursor.NextMatch()
+	captures := cursor.Captures(query, root, text)
 
-		if !ok {
-			break
-		}
+	for match, idx := captures.Next(); match != nil; match, idx = captures.Next() {
+		cap := match.Captures[idx]
 
-		for _, cap := range match.Captures {
-			if prev != nil && prev.Node.Equal(cap.Node) {
-				if cap.Index > prev.Index {
-					list[len(list)-1] = &cap
-				}
-			} else {
-				list = append(list, &cap)
+		if prev != nil && prev.Node.StartByte() == cap.Node.StartByte() {
+			if cap.Index > prev.Index {
+				list[len(list)-1] = &cap
 			}
-
-			prev = &cap
+		} else {
+			list = append(list, &cap)
 		}
+
+		prev = &cap
 	}
 
 	return list

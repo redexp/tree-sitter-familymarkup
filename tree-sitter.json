@@ -13,7 +13,7 @@
     }
   ],
   "metadata": {
-    "version": "1.8.3",
+    "version": "1.12.0",
     "license": "BSD 4-Clause",
     "description": "Tree sitter for FamilyMarkup",
     "authors": [
@@ -22,7 +22,7 @@
       }
     ],
     "links": {
-      "repository": "https://github.com/tree-sitter/tree-sitter-familymarkup"
+      "repository": "https://github.com/redexp/tree-sitter-familymarkup"
     }
   },
   "bindings": {

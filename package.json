@@ -1,12 +1,12 @@
 {
   "name": "tree-sitter-familymarkup",
   "description": "Tree sitter for FamilyMarkup",
-  "version": "1.11.0",
+  "version": "1.12.0",
   "main": "bindings/node",
   "types": "bindings/node",
   "scripts": {
     "install": "node-gyp-build",
-    "gb": "tree-sitter generate && tree-sitter build && rm -rf bindings/go",
+    "gb": "tree-sitter generate && tree-sitter build",
     "prestart": "tree-sitter build --wasm",
     "start": "tree-sitter playground",
     "test": "tree-sitter test"

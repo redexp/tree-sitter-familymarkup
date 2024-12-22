@@ -3,19 +3,19 @@ package familymarkup
 import (
 	_ "embed"
 
-	binding "github.com/redexp/tree-sitter-familymarkup/src"
-	sitter "github.com/smacker/go-tree-sitter"
+	binding "github.com/redexp/tree-sitter-familymarkup/bindings/go"
+	sitter "github.com/tree-sitter/go-tree-sitter"
 )
 
 //go:embed queries/highlights.scm
-var highlightQuery []byte
+var HighlightQuery string
 
 func GetLanguage() *sitter.Language {
 	return sitter.NewLanguage(binding.Language())
 }
 
-func GetHighlightQuery() (*sitter.Query, error) {
-	return sitter.NewQuery(highlightQuery, GetLanguage())
+func GetHighlightQuery() (*sitter.Query, *sitter.QueryError) {
+	return sitter.NewQuery(GetLanguage(), HighlightQuery)
 }
 
 func GetHighlightLegend() ([]string, error) {
@@ -27,13 +27,5 @@ func GetHighlightLegend() ([]string, error) {
 
 	defer query.Close()
 
-	count := query.CaptureCount()
-
-	legend := make([]string, count)
-
-	for i := uint32(0); i < count; i++ {
-		legend[i] = query.CaptureNameForId(i)
-	}
-
-	return legend, nil
+	return query.CaptureNames(), nil
 }
