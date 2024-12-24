@@ -1,5 +1,5 @@
 module.exports = grammar({
-	name: 'familymarkup',
+  name: 'familymarkup',
 
   conflicts: $ => [
     [$.family],
@@ -10,8 +10,8 @@ module.exports = grammar({
 
   extras: _ => [' ', '\t'],
 
-	rules: {
-		root: $ => seq(
+  rules: {
+    root: $ => seq(
       optional(choice($._nl, $._multi_newline)),
       repeatWith($.family, $._multi_newline),
       optional(choice($._nl, $._multi_newline)),
@@ -20,7 +20,7 @@ module.exports = grammar({
     _multi_newline: _ => /\r?\n[\r\n\s]*\r?\n/,
     _nl: _ => /\r?\n/,
 
-		family: $ => seq(
+    family: $ => seq(
       field('name', $.family_name),
       optional(seq(
         $._nl,
