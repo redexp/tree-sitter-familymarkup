@@ -13,7 +13,7 @@
     }
   ],
   "metadata": {
-    "version": "1.12.0",
+    "version": "1.14.0",
     "license": "BSD 4-Clause",
     "description": "Tree sitter for FamilyMarkup",
     "authors": [

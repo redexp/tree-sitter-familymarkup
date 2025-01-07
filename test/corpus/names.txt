@@ -34,7 +34,7 @@ non ascii letters
 Сімʼя (Рыкало, Ãåąčćęèéêëėįìíîï)
 
 Сергій + Ол"ійник Мар'яна-2 =
-(Ćęèéê) Åąčćęèéê-ëėįìíîï (Йод)
+Åąčćęèéê-ëėįìíîï (Йод, J.) Ćęèéê
 
 -------
 
@@ -53,8 +53,8 @@ non ascii letters
         (eq)
         (targets
           (name_def
-            (new_surname (name))
             (name)
-            (name_aliases (name))))))))
+            (name_aliases (name) (name))
+            (surname)))))))
 
 

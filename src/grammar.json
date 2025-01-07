@@ -509,22 +509,6 @@
         },
         {
           "type": "FIELD",
-          "name": "surname",
-          "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "new_surname"
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
-          }
-        },
-        {
-          "type": "FIELD",
           "name": "name",
           "content": {
             "type": "SYMBOL",
@@ -570,26 +554,30 @@
         }
       ]
     },
-    "num": {
-      "type": "PATTERN",
-      "value": "\\d+[.)]?"
-    },
-    "new_surname": {
+    "num_unknown": {
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "("
+          "type": "FIELD",
+          "name": "number",
+          "content": {
+            "type": "SYMBOL",
+            "name": "num"
+          }
         },
         {
-          "type": "SYMBOL",
-          "name": "name"
-        },
-        {
-          "type": "STRING",
-          "value": ")"
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "unknown"
+          }
         }
       ]
+    },
+    "num": {
+      "type": "PATTERN",
+      "value": "\\d+[.)]?"
     },
     "name_aliases": {
       "type": "SEQ",
@@ -681,7 +669,7 @@
     },
     "name": {
       "type": "PATTERN",
-      "value": "\\p{Lu}[\\p{L}\\-\\d'\"]*",
+      "value": "\\p{Lu}[\\p{L}\\-\\d'\".]*",
       "flags": "u"
     },
     "unknown": {
@@ -695,19 +683,6 @@
           "type": "PATTERN",
           "value": "\\p{L}[\\p{L}\\-\\d'\" ]*\\?",
           "flags": "u"
-        }
-      ]
-    },
-    "num_unknown": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "num"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "unknown"
         }
       ]
     },

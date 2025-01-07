@@ -60,17 +60,17 @@ module.exports = grammar({
 
     name_def: $ => seq(
       field('number', optional($.num)),
-      field('surname', optional($.new_surname)),
       field('name', $.name),
       field('aliases', optional($.name_aliases)),
       field('surname', optional(alias($.name, $.surname))),
     ),
 
-    num: _ => /\d+[.)]?/,
-
-    new_surname: $ => seq(
-      '(', $.name, ')'
+    num_unknown: $ => seq(
+      field('number', $.num),
+      field('name', $.unknown),
     ),
+
+    num: _ => /\d+[.)]?/,
 
     name_aliases: $ => seq(
       '(', optional(repeatWith($.name, ',')), ')'
@@ -78,10 +78,9 @@ module.exports = grammar({
 
     comment: _ => seq(choice('*', '/', '#'), optional(/[^\n]+/)),
 
-    name: _ => /\p{Lu}[\p{L}\-\d'"]*/u,
+    name: _ => /\p{Lu}[\p{L}\-\d'".]*/u,
 
     unknown: _ => choice('?', /\p{L}[\p{L}\-\d'" ]*\?/u),
-    num_unknown: $ => seq($.num, $.unknown),
 
     words: _ => /\p{Ll}([\p{Ll}'"\s]*[\p{Ll}'"])?/u,
     _words: $ => alias($.words, '_words'),

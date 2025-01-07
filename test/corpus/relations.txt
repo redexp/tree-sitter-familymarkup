@@ -292,7 +292,7 @@ Family2
 
 Name + Name Fam =
 1. Name
-2. (Sur) Name
+2. Name Sur
 3. girl?
 
 ---------
@@ -350,7 +350,7 @@ Name + Name Fam =
         (eq)
         (targets
           (name_def (num) (name))
-          (name_def (num) (new_surname (name)) (name))
+          (name_def (num) (name) (surname))
           (num_unknown (num) (unknown))
         )
       )
@@ -367,8 +367,8 @@ relation names with new surname
 Family
 
 Name + Name? =
-(Surname) Name (Alias)
-(Surname) Name
+Name (Alias) Surname
+Name Surname
 Name
 
 ---------
@@ -385,14 +385,17 @@ Name
         (eq)
         (targets
           (name_def
-            (new_surname (name))
             (name)
-            (name_aliases (name)))
+            (name_aliases (name))
+            (surname)
+          )
           (name_def
-            (new_surname (name))
-            (name))
+            (name)
+            (surname)
+          )
           (name_def
-            (name))
+            (name)
+          )
         )
       )
     )
@@ -410,9 +413,9 @@ Family
 # some desc
 
 Name + ? =
-(Surname) Name (Alias)
+Name (Alias) Surname
 # some (random) - ? = text
-(Surname) Name
+Name Surname
 * other крилик # asd / asd
 ?
 // test
@@ -436,13 +439,15 @@ Fam
         (eq)
         (targets
           (name_def
-            (new_surname (name))
             (name)
-            (name_aliases (name)))
+            (name_aliases (name))
+            (surname)
+          )
           (comment)
           (name_def
-            (new_surname (name))
-            (name))
+            (name)
+            (surname)
+          )
           (comment)
           (unknown)
           (comment)

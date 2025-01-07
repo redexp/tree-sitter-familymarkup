@@ -115,13 +115,9 @@
         ]
       },
       "surname": {
-        "multiple": true,
+        "multiple": false,
         "required": false,
         "types": [
-          {
-            "type": "new_surname",
-            "named": true
-          },
           {
             "type": "surname",
             "named": true
@@ -150,37 +146,29 @@
     }
   },
   {
-    "type": "new_surname",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "name",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "num_unknown",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "num",
-          "named": true
-        },
-        {
-          "type": "unknown",
-          "named": true
-        }
-      ]
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "unknown",
+            "named": true
+          }
+        ]
+      },
+      "number": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "num",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
